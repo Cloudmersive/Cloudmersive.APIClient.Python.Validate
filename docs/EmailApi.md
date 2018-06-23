@@ -1,4 +1,4 @@
-# swagger_client.EmailApi
+# cloudmersive_validate_api_client.EmailApi
 
 All URIs are relative to *https://api.cloudmersive.com*
 
@@ -20,18 +20,18 @@ Validate an email address by identifying whether its parent domain has email ser
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
-configuration = swagger_client.Configuration()
+configuration = cloudmersive_validate_api_client.Configuration()
 configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EmailApi(swagger_client.ApiClient(configuration))
+api_instance = cloudmersive_validate_api_client.EmailApi(cloudmersive_validate_api_client.ApiClient(configuration))
 email = 'email_example' # str | Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes.
 
 try:
@@ -74,18 +74,18 @@ Performs a full validation of the email address.  Checks for syntactic correctne
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
-configuration = swagger_client.Configuration()
+configuration = cloudmersive_validate_api_client.Configuration()
 configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EmailApi(swagger_client.ApiClient(configuration))
+api_instance = cloudmersive_validate_api_client.EmailApi(cloudmersive_validate_api_client.ApiClient(configuration))
 email = 'email_example' # str | Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes.
 
 try:
@@ -128,18 +128,18 @@ Validate whether a given email address is syntactically correct via a limited lo
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
-configuration = swagger_client.Configuration()
+configuration = cloudmersive_validate_api_client.Configuration()
 configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EmailApi(swagger_client.ApiClient(configuration))
+api_instance = cloudmersive_validate_api_client.EmailApi(cloudmersive_validate_api_client.ApiClient(configuration))
 value = 'value_example' # str | Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes.
 
 try:

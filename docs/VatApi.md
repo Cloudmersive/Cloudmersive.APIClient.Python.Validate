@@ -1,4 +1,4 @@
-# swagger_client.VatApi
+# cloudmersive_validate_api_client.VatApi
 
 All URIs are relative to *https://api.cloudmersive.com*
 
@@ -18,19 +18,19 @@ Checks if a VAT code is valid, and if it is, returns more information about it
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
-configuration = swagger_client.Configuration()
+configuration = cloudmersive_validate_api_client.Configuration()
 configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.VatApi(swagger_client.ApiClient(configuration))
-input = swagger_client.VatLookupRequest() # VatLookupRequest | Input VAT code
+api_instance = cloudmersive_validate_api_client.VatApi(cloudmersive_validate_api_client.ApiClient(configuration))
+input = cloudmersive_validate_api_client.VatLookupRequest() # VatLookupRequest | Input VAT code
 
 try:
     # Lookup a VAT code

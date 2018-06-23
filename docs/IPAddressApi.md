@@ -1,4 +1,4 @@
-# swagger_client.IPAddressApi
+# cloudmersive_validate_api_client.IPAddressApi
 
 All URIs are relative to *https://api.cloudmersive.com*
 
@@ -18,18 +18,18 @@ Identify an IP address Country, State/Provence, City, Zip/Postal Code, etc.  Use
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
-configuration = swagger_client.Configuration()
+configuration = cloudmersive_validate_api_client.Configuration()
 configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.IPAddressApi(swagger_client.ApiClient(configuration))
+api_instance = cloudmersive_validate_api_client.IPAddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
 value = 'value_example' # str | IP address to geolocate, e.g. \"55.55.55.55\".  The input is a string so be sure to enclose it in double-quotes.
 
 try:
