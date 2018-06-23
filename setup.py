@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "cloudmersive-validate-api-client"
+NAME = "cloudmersive.validate.api.client"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
