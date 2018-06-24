@@ -5,12 +5,15 @@ from cloudmersive_validate_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
+cloudmersive_validate_api_client.configuration.api_key = {}
 cloudmersive_validate_api_client.configuration.api_key['Apikey'] = 'f0c513bc-8c00-4491-830e-3e83b015feb6'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# cloudmersive_validate_api_client.configuration.api_key_prefix['Apikey'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = cloudmersive_validate_api_client.DomainApi()
-domain = 'domain_example' # str | Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes.
+domain = 'cloudmersive.com' # str | Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes.
+
+#cloudmersive_validate_api_client.configuration.api_key['Apikey'] = 'f0c513bc-8c00-4491-830e-3e83b015feb6'
+#cloudmersive_validate_api_client.configuration.api_key = { 'Apikey', 'f0c513bc-8c00-4491-830e-3e83b015feb6' }
 
 try:
     # Validate a domain name
