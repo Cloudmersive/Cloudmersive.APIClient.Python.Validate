@@ -32,31 +32,56 @@ class FullEmailValidationResponse(object):
     """
     swagger_types = {
         'valid_address': 'bool',
-        'mail_server_used_for_validation': 'str'
+        'mail_server_used_for_validation': 'str',
+        'valid_syntax': 'bool',
+        'valid_domain': 'bool',
+        'valid_smtp': 'bool',
+        'is_catchall_domain': 'bool',
+        'domain': 'str'
     }
 
     attribute_map = {
         'valid_address': 'ValidAddress',
-        'mail_server_used_for_validation': 'MailServerUsedForValidation'
+        'mail_server_used_for_validation': 'MailServerUsedForValidation',
+        'valid_syntax': 'Valid_Syntax',
+        'valid_domain': 'Valid_Domain',
+        'valid_smtp': 'Valid_SMTP',
+        'is_catchall_domain': 'IsCatchallDomain',
+        'domain': 'Domain'
     }
 
-    def __init__(self, valid_address=None, mail_server_used_for_validation=None):  # noqa: E501
+    def __init__(self, valid_address=None, mail_server_used_for_validation=None, valid_syntax=None, valid_domain=None, valid_smtp=None, is_catchall_domain=None, domain=None):  # noqa: E501
         """FullEmailValidationResponse - a model defined in Swagger"""  # noqa: E501
 
         self._valid_address = None
         self._mail_server_used_for_validation = None
+        self._valid_syntax = None
+        self._valid_domain = None
+        self._valid_smtp = None
+        self._is_catchall_domain = None
+        self._domain = None
         self.discriminator = None
 
         if valid_address is not None:
             self.valid_address = valid_address
         if mail_server_used_for_validation is not None:
             self.mail_server_used_for_validation = mail_server_used_for_validation
+        if valid_syntax is not None:
+            self.valid_syntax = valid_syntax
+        if valid_domain is not None:
+            self.valid_domain = valid_domain
+        if valid_smtp is not None:
+            self.valid_smtp = valid_smtp
+        if is_catchall_domain is not None:
+            self.is_catchall_domain = is_catchall_domain
+        if domain is not None:
+            self.domain = domain
 
     @property
     def valid_address(self):
         """Gets the valid_address of this FullEmailValidationResponse.  # noqa: E501
 
-        True if the email address is valid, false otherwise  # noqa: E501
+        True if the email address is valid overall, false otherwise  # noqa: E501
 
         :return: The valid_address of this FullEmailValidationResponse.  # noqa: E501
         :rtype: bool
@@ -67,7 +92,7 @@ class FullEmailValidationResponse(object):
     def valid_address(self, valid_address):
         """Sets the valid_address of this FullEmailValidationResponse.
 
-        True if the email address is valid, false otherwise  # noqa: E501
+        True if the email address is valid overall, false otherwise  # noqa: E501
 
         :param valid_address: The valid_address of this FullEmailValidationResponse.  # noqa: E501
         :type: bool
@@ -97,6 +122,121 @@ class FullEmailValidationResponse(object):
         """
 
         self._mail_server_used_for_validation = mail_server_used_for_validation
+
+    @property
+    def valid_syntax(self):
+        """Gets the valid_syntax of this FullEmailValidationResponse.  # noqa: E501
+
+        True if the syntax of the email address is valid, false otherwise.  This is one component of ValidAddress, but not the only one.  # noqa: E501
+
+        :return: The valid_syntax of this FullEmailValidationResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._valid_syntax
+
+    @valid_syntax.setter
+    def valid_syntax(self, valid_syntax):
+        """Sets the valid_syntax of this FullEmailValidationResponse.
+
+        True if the syntax of the email address is valid, false otherwise.  This is one component of ValidAddress, but not the only one.  # noqa: E501
+
+        :param valid_syntax: The valid_syntax of this FullEmailValidationResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._valid_syntax = valid_syntax
+
+    @property
+    def valid_domain(self):
+        """Gets the valid_domain of this FullEmailValidationResponse.  # noqa: E501
+
+        True if the domain name of the email address is valid, false otherwise.  This is one component of ValidAddress, but not the only one.  # noqa: E501
+
+        :return: The valid_domain of this FullEmailValidationResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._valid_domain
+
+    @valid_domain.setter
+    def valid_domain(self, valid_domain):
+        """Sets the valid_domain of this FullEmailValidationResponse.
+
+        True if the domain name of the email address is valid, false otherwise.  This is one component of ValidAddress, but not the only one.  # noqa: E501
+
+        :param valid_domain: The valid_domain of this FullEmailValidationResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._valid_domain = valid_domain
+
+    @property
+    def valid_smtp(self):
+        """Gets the valid_smtp of this FullEmailValidationResponse.  # noqa: E501
+
+        True if the email address was verified by the remote server, false otherwise.  This is one component of ValidAddress, but not the only one.  # noqa: E501
+
+        :return: The valid_smtp of this FullEmailValidationResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._valid_smtp
+
+    @valid_smtp.setter
+    def valid_smtp(self, valid_smtp):
+        """Sets the valid_smtp of this FullEmailValidationResponse.
+
+        True if the email address was verified by the remote server, false otherwise.  This is one component of ValidAddress, but not the only one.  # noqa: E501
+
+        :param valid_smtp: The valid_smtp of this FullEmailValidationResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._valid_smtp = valid_smtp
+
+    @property
+    def is_catchall_domain(self):
+        """Gets the is_catchall_domain of this FullEmailValidationResponse.  # noqa: E501
+
+        True if the domain is a catch-all domain name, false otherwise.  Catch-all domain names, while rare, always accept inbound email to ensure they do not lose any potentially useful emails.  Catch-all domain names can occassionally be configured to first accept and store all inbound email, but then later send a bounce email back to the sender after a delayed period of time.  # noqa: E501
+
+        :return: The is_catchall_domain of this FullEmailValidationResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_catchall_domain
+
+    @is_catchall_domain.setter
+    def is_catchall_domain(self, is_catchall_domain):
+        """Sets the is_catchall_domain of this FullEmailValidationResponse.
+
+        True if the domain is a catch-all domain name, false otherwise.  Catch-all domain names, while rare, always accept inbound email to ensure they do not lose any potentially useful emails.  Catch-all domain names can occassionally be configured to first accept and store all inbound email, but then later send a bounce email back to the sender after a delayed period of time.  # noqa: E501
+
+        :param is_catchall_domain: The is_catchall_domain of this FullEmailValidationResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_catchall_domain = is_catchall_domain
+
+    @property
+    def domain(self):
+        """Gets the domain of this FullEmailValidationResponse.  # noqa: E501
+
+        Domain name of the email address  # noqa: E501
+
+        :return: The domain of this FullEmailValidationResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this FullEmailValidationResponse.
+
+        Domain name of the email address  # noqa: E501
+
+        :param domain: The domain of this FullEmailValidationResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._domain = domain
 
     def to_dict(self):
         """Returns the model properties as a dict"""
