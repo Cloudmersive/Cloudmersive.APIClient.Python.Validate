@@ -119,6 +119,9 @@ class GetGenderResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetGenderResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

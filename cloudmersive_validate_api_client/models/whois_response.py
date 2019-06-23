@@ -175,6 +175,9 @@ class WhoisResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(WhoisResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

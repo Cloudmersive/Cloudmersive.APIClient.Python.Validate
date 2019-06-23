@@ -287,6 +287,9 @@ class PhoneNumberValidationResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PhoneNumberValidationResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

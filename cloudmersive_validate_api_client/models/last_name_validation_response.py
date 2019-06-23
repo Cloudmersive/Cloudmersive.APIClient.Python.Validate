@@ -119,6 +119,9 @@ class LastNameValidationResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(LastNameValidationResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

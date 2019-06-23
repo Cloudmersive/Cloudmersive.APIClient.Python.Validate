@@ -89,6 +89,9 @@ class VatLookupRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(VatLookupRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

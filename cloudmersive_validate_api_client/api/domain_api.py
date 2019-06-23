@@ -38,18 +38,18 @@ class DomainApi(object):
 
         Check whether a domain name is valid or not.  API performs a live validation by contacting DNS services to validate the existence of the domain name.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.domain_check(domain, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_check(domain, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str domain: Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes. (required)
         :return: CheckResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.domain_check_with_http_info(domain, **kwargs)  # noqa: E501
         else:
             (data) = self.domain_check_with_http_info(domain, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class DomainApi(object):
 
         Check whether a domain name is valid or not.  API performs a live validation by contacting DNS services to validate the existence of the domain name.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.domain_check_with_http_info(domain, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_check_with_http_info(domain, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str domain: Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes. (required)
         :return: CheckResponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class DomainApi(object):
         """
 
         all_params = ['domain']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class DomainApi(object):
             files=local_var_files,
             response_type='CheckResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class DomainApi(object):
 
         Validate whether a domain name exists, and also return the full WHOIS record for that domain name.  WHOIS records include all the registration details of the domain name, such as information about the domain's owners.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.domain_post(domain, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_post(domain, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str domain: Domain name to check, for example \"cloudmersive.com\".   The input is a string so be sure to enclose it in double-quotes. (required)
         :return: WhoisResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.domain_post_with_http_info(domain, **kwargs)  # noqa: E501
         else:
             (data) = self.domain_post_with_http_info(domain, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class DomainApi(object):
 
         Validate whether a domain name exists, and also return the full WHOIS record for that domain name.  WHOIS records include all the registration details of the domain name, such as information about the domain's owners.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.domain_post_with_http_info(domain, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_post_with_http_info(domain, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str domain: Domain name to check, for example \"cloudmersive.com\".   The input is a string so be sure to enclose it in double-quotes. (required)
         :return: WhoisResponse
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class DomainApi(object):
         """
 
         all_params = ['domain']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class DomainApi(object):
             files=local_var_files,
             response_type='WhoisResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

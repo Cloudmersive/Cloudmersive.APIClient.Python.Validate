@@ -38,18 +38,18 @@ class EmailApi(object):
 
         Validate an email address by identifying whether its parent domain has email servers defined.  This call is less limited than syntaxOnly but not as comprehensive as address/full.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.email_address_get_servers(email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.email_address_get_servers(email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str email: Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes. (required)
         :return: AddressGetServersResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.email_address_get_servers_with_http_info(email, **kwargs)  # noqa: E501
         else:
             (data) = self.email_address_get_servers_with_http_info(email, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class EmailApi(object):
 
         Validate an email address by identifying whether its parent domain has email servers defined.  This call is less limited than syntaxOnly but not as comprehensive as address/full.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.email_address_get_servers_with_http_info(email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.email_address_get_servers_with_http_info(email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str email: Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes. (required)
         :return: AddressGetServersResponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class EmailApi(object):
         """
 
         all_params = ['email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class EmailApi(object):
             files=local_var_files,
             response_type='AddressGetServersResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class EmailApi(object):
 
         Performs a full validation of the email address.  Checks for syntactic correctness, identifies the mail server in question if any, and then contacts the email server to validate the existence of the account - without sending any emails.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.email_full_validation(email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.email_full_validation(email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str email: Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes. (required)
         :return: FullEmailValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.email_full_validation_with_http_info(email, **kwargs)  # noqa: E501
         else:
             (data) = self.email_full_validation_with_http_info(email, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class EmailApi(object):
 
         Performs a full validation of the email address.  Checks for syntactic correctness, identifies the mail server in question if any, and then contacts the email server to validate the existence of the account - without sending any emails.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.email_full_validation_with_http_info(email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.email_full_validation_with_http_info(email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str email: Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes. (required)
         :return: FullEmailValidationResponse
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class EmailApi(object):
         """
 
         all_params = ['email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class EmailApi(object):
             files=local_var_files,
             response_type='FullEmailValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,18 +236,18 @@ class EmailApi(object):
 
         Validate whether a given email address is syntactically correct via a limited local-only check.  Use the address/full API to do a full validation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.email_post(value, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.email_post(value, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str value: Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes. (required)
         :return: AddressVerifySyntaxOnlyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.email_post_with_http_info(value, **kwargs)  # noqa: E501
         else:
             (data) = self.email_post_with_http_info(value, **kwargs)  # noqa: E501
@@ -258,11 +258,11 @@ class EmailApi(object):
 
         Validate whether a given email address is syntactically correct via a limited local-only check.  Use the address/full API to do a full validation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.email_post_with_http_info(value, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.email_post_with_http_info(value, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str value: Email address to validate, e.g. \"support@cloudmersive.com\".    The input is a string so be sure to enclose it in double-quotes. (required)
         :return: AddressVerifySyntaxOnlyResponse
                  If the method is called asynchronously,
@@ -270,7 +270,7 @@ class EmailApi(object):
         """
 
         all_params = ['value']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -324,7 +324,7 @@ class EmailApi(object):
             files=local_var_files,
             response_type='AddressVerifySyntaxOnlyResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

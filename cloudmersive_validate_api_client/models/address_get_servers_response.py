@@ -115,6 +115,9 @@ class AddressGetServersResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AddressGetServersResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

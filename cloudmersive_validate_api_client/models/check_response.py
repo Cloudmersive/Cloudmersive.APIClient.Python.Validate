@@ -91,6 +91,9 @@ class CheckResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CheckResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

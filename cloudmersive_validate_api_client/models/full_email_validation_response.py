@@ -259,6 +259,9 @@ class FullEmailValidationResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(FullEmailValidationResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
