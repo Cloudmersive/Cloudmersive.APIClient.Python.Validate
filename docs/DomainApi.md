@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**domain_check**](DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 [**domain_post**](DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
+[**domain_url_syntax_only**](DomainApi.md#domain_url_syntax_only) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 
 
 # **domain_check**
@@ -104,6 +105,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WhoisResponse**](WhoisResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **domain_url_syntax_only**
+> ValidateUrlResponseSyntaxOnly domain_url_syntax_only(request)
+
+Validate a URL syntactically
+
+Validate whether a URL is syntactically valid (does not check endpoint for validity).  Accepts various types of input and produces a well-formed URL as output.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.DomainApi(cloudmersive_validate_api_client.ApiClient(configuration))
+request = cloudmersive_validate_api_client.ValidateUrlRequestSyntaxOnly() # ValidateUrlRequestSyntaxOnly | 
+
+try:
+    # Validate a URL syntactically
+    api_response = api_instance.domain_url_syntax_only(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DomainApi->domain_url_syntax_only: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**ValidateUrlRequestSyntaxOnly**](ValidateUrlRequestSyntaxOnly.md)|  | 
+
+### Return type
+
+[**ValidateUrlResponseSyntaxOnly**](ValidateUrlResponseSyntaxOnly.md)
 
 ### Authorization
 
