@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 2.0.5
+- Package version: 2.0.6
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 *NameApi* | [**name_validate_full_name**](docs/NameApi.md#name_validate_full_name) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**name_validate_last_name**](docs/NameApi.md#name_validate_last_name) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phone_number_syntax_only**](docs/PhoneNumberApi.md#phone_number_syntax_only) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
+*UserAgentApi* | [**user_agent_parse**](docs/UserAgentApi.md#user_agent_parse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vat_vat_lookup**](docs/VatApi.md#vat_vat_lookup) | **POST** /validate/vat/lookup | Lookup a VAT code
 
 
@@ -112,6 +113,8 @@ Class | Method | HTTP request | Description
  - [ParseAddressResponse](docs/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/PhoneNumberValidationResponse.md)
+ - [UserAgentValidateRequest](docs/UserAgentValidateRequest.md)
+ - [UserAgentValidateResponse](docs/UserAgentValidateResponse.md)
  - [ValidateUrlRequestFull](docs/ValidateUrlRequestFull.md)
  - [ValidateUrlRequestSyntaxOnly](docs/ValidateUrlRequestSyntaxOnly.md)
  - [ValidateUrlResponseFull](docs/ValidateUrlResponseFull.md)
