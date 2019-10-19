@@ -71,6 +71,7 @@ class VatLookupResponse(object):
     def country_code(self):
         """Gets the country_code of this VatLookupResponse.  # noqa: E501
 
+        Two-letter country code  # noqa: E501
 
         :return: The country_code of this VatLookupResponse.  # noqa: E501
         :rtype: str
@@ -81,6 +82,7 @@ class VatLookupResponse(object):
     def country_code(self, country_code):
         """Sets the country_code of this VatLookupResponse.
 
+        Two-letter country code  # noqa: E501
 
         :param country_code: The country_code of this VatLookupResponse.  # noqa: E501
         :type: str
@@ -92,6 +94,7 @@ class VatLookupResponse(object):
     def vat_number(self):
         """Gets the vat_number of this VatLookupResponse.  # noqa: E501
 
+        VAT number  # noqa: E501
 
         :return: The vat_number of this VatLookupResponse.  # noqa: E501
         :rtype: str
@@ -102,6 +105,7 @@ class VatLookupResponse(object):
     def vat_number(self, vat_number):
         """Sets the vat_number of this VatLookupResponse.
 
+        VAT number  # noqa: E501
 
         :param vat_number: The vat_number of this VatLookupResponse.  # noqa: E501
         :type: str
@@ -113,6 +117,7 @@ class VatLookupResponse(object):
     def is_valid(self):
         """Gets the is_valid of this VatLookupResponse.  # noqa: E501
 
+        True if the VAT code is valid, false otherwise  # noqa: E501
 
         :return: The is_valid of this VatLookupResponse.  # noqa: E501
         :rtype: bool
@@ -123,6 +128,7 @@ class VatLookupResponse(object):
     def is_valid(self, is_valid):
         """Sets the is_valid of this VatLookupResponse.
 
+        True if the VAT code is valid, false otherwise  # noqa: E501
 
         :param is_valid: The is_valid of this VatLookupResponse.  # noqa: E501
         :type: bool
@@ -134,6 +140,7 @@ class VatLookupResponse(object):
     def business_name(self):
         """Gets the business_name of this VatLookupResponse.  # noqa: E501
 
+        Name of the business  # noqa: E501
 
         :return: The business_name of this VatLookupResponse.  # noqa: E501
         :rtype: str
@@ -144,6 +151,7 @@ class VatLookupResponse(object):
     def business_name(self, business_name):
         """Sets the business_name of this VatLookupResponse.
 
+        Name of the business  # noqa: E501
 
         :param business_name: The business_name of this VatLookupResponse.  # noqa: E501
         :type: str
@@ -155,6 +163,7 @@ class VatLookupResponse(object):
     def business_address(self):
         """Gets the business_address of this VatLookupResponse.  # noqa: E501
 
+        Business address  # noqa: E501
 
         :return: The business_address of this VatLookupResponse.  # noqa: E501
         :rtype: str
@@ -165,6 +174,7 @@ class VatLookupResponse(object):
     def business_address(self, business_address):
         """Sets the business_address of this VatLookupResponse.
 
+        Business address  # noqa: E501
 
         :param business_address: The business_address of this VatLookupResponse.  # noqa: E501
         :type: str

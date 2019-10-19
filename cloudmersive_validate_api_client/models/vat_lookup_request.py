@@ -51,6 +51,7 @@ class VatLookupRequest(object):
     def vat_code(self):
         """Gets the vat_code of this VatLookupRequest.  # noqa: E501
 
+        VAT code to lookup; example \"CZ25123891\"  # noqa: E501
 
         :return: The vat_code of this VatLookupRequest.  # noqa: E501
         :rtype: str
@@ -61,6 +62,7 @@ class VatLookupRequest(object):
     def vat_code(self, vat_code):
         """Sets the vat_code of this VatLookupRequest.
 
+        VAT code to lookup; example \"CZ25123891\"  # noqa: E501
 
         :param vat_code: The vat_code of this VatLookupRequest.  # noqa: E501
         :type: str

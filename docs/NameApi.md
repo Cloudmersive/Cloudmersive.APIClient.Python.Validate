@@ -5,6 +5,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**name_get_gender**](NameApi.md#name_get_gender) | **POST** /validate/name/get-gender | Get the gender of a first name
+[**name_identifier**](NameApi.md#name_identifier) | **POST** /validate/name/identifier | Validate a code identifier
 [**name_validate_first_name**](NameApi.md#name_validate_first_name) | **POST** /validate/name/first | Validate a first name
 [**name_validate_full_name**](NameApi.md#name_validate_full_name) | **POST** /validate/name/full-name | Parse and validate a full name
 [**name_validate_last_name**](NameApi.md#name_validate_last_name) | **POST** /validate/name/last | Validate a last name
@@ -52,6 +53,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetGenderResponse**](GetGenderResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **name_identifier**
+> ValidateIdentifierResponse name_identifier(input)
+
+Validate a code identifier
+
+Determines if the input name is a valid technical / code identifier.  Configure input rules such as whether whitespace, hyphens, underscores, etc. are allowed.  For example, a valid identifier might be \"helloWorld\" but not \"hello*World\".
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.NameApi(cloudmersive_validate_api_client.ApiClient(configuration))
+input = cloudmersive_validate_api_client.ValidateIdentifierRequest() # ValidateIdentifierRequest | Identifier validation request information
+
+try:
+    # Validate a code identifier
+    api_response = api_instance.name_identifier(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling NameApi->name_identifier: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ValidateIdentifierRequest**](ValidateIdentifierRequest.md)| Identifier validation request information | 
+
+### Return type
+
+[**ValidateIdentifierResponse**](ValidateIdentifierResponse.md)
 
 ### Authorization
 

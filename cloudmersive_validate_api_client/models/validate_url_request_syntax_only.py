@@ -51,6 +51,7 @@ class ValidateUrlRequestSyntaxOnly(object):
     def url(self):
         """Gets the url of this ValidateUrlRequestSyntaxOnly.  # noqa: E501
 
+        URL to validate  # noqa: E501
 
         :return: The url of this ValidateUrlRequestSyntaxOnly.  # noqa: E501
         :rtype: str
@@ -61,6 +62,7 @@ class ValidateUrlRequestSyntaxOnly(object):
     def url(self, url):
         """Sets the url of this ValidateUrlRequestSyntaxOnly.
 
+        URL to validate  # noqa: E501
 
         :param url: The url of this ValidateUrlRequestSyntaxOnly.  # noqa: E501
         :type: str

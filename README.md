@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 2.0.6
+- Package version: 2.0.7
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**email_post**](docs/EmailApi.md#email_post) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
 *IPAddressApi* | [**i_p_address_post**](docs/IPAddressApi.md#i_p_address_post) | **POST** /validate/ip/geolocate | Geolocate an IP address
 *NameApi* | [**name_get_gender**](docs/NameApi.md#name_get_gender) | **POST** /validate/name/get-gender | Get the gender of a first name
+*NameApi* | [**name_identifier**](docs/NameApi.md#name_identifier) | **POST** /validate/name/identifier | Validate a code identifier
 *NameApi* | [**name_validate_first_name**](docs/NameApi.md#name_validate_first_name) | **POST** /validate/name/first | Validate a first name
 *NameApi* | [**name_validate_full_name**](docs/NameApi.md#name_validate_full_name) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**name_validate_last_name**](docs/NameApi.md#name_validate_last_name) | **POST** /validate/name/last | Validate a last name
@@ -115,6 +116,8 @@ Class | Method | HTTP request | Description
  - [PhoneNumberValidationResponse](docs/PhoneNumberValidationResponse.md)
  - [UserAgentValidateRequest](docs/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/UserAgentValidateResponse.md)
+ - [ValidateIdentifierRequest](docs/ValidateIdentifierRequest.md)
+ - [ValidateIdentifierResponse](docs/ValidateIdentifierResponse.md)
  - [ValidateUrlRequestFull](docs/ValidateUrlRequestFull.md)
  - [ValidateUrlRequestSyntaxOnly](docs/ValidateUrlRequestSyntaxOnly.md)
  - [ValidateUrlResponseFull](docs/ValidateUrlResponseFull.md)
