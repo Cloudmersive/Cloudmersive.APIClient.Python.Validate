@@ -32,6 +32,17 @@ class WhoisResponse(object):
     """
     swagger_types = {
         'valid_domain': 'bool',
+        'registrant_name': 'str',
+        'registrant_organization': 'str',
+        'registrant_email': 'str',
+        'registrant_street_number': 'str',
+        'registrant_street': 'str',
+        'registrant_city': 'str',
+        'registrant_state_or_province': 'str',
+        'registrant_postal_code': 'str',
+        'registrant_country': 'str',
+        'registrant_raw_address': 'str',
+        'registrant_telephone': 'str',
         'whois_server': 'str',
         'raw_text_record': 'str',
         'created_dt': 'datetime'
@@ -39,15 +50,37 @@ class WhoisResponse(object):
 
     attribute_map = {
         'valid_domain': 'ValidDomain',
+        'registrant_name': 'RegistrantName',
+        'registrant_organization': 'RegistrantOrganization',
+        'registrant_email': 'RegistrantEmail',
+        'registrant_street_number': 'RegistrantStreetNumber',
+        'registrant_street': 'RegistrantStreet',
+        'registrant_city': 'RegistrantCity',
+        'registrant_state_or_province': 'RegistrantStateOrProvince',
+        'registrant_postal_code': 'RegistrantPostalCode',
+        'registrant_country': 'RegistrantCountry',
+        'registrant_raw_address': 'RegistrantRawAddress',
+        'registrant_telephone': 'RegistrantTelephone',
         'whois_server': 'WhoisServer',
         'raw_text_record': 'RawTextRecord',
         'created_dt': 'CreatedDt'
     }
 
-    def __init__(self, valid_domain=None, whois_server=None, raw_text_record=None, created_dt=None):  # noqa: E501
+    def __init__(self, valid_domain=None, registrant_name=None, registrant_organization=None, registrant_email=None, registrant_street_number=None, registrant_street=None, registrant_city=None, registrant_state_or_province=None, registrant_postal_code=None, registrant_country=None, registrant_raw_address=None, registrant_telephone=None, whois_server=None, raw_text_record=None, created_dt=None):  # noqa: E501
         """WhoisResponse - a model defined in Swagger"""  # noqa: E501
 
         self._valid_domain = None
+        self._registrant_name = None
+        self._registrant_organization = None
+        self._registrant_email = None
+        self._registrant_street_number = None
+        self._registrant_street = None
+        self._registrant_city = None
+        self._registrant_state_or_province = None
+        self._registrant_postal_code = None
+        self._registrant_country = None
+        self._registrant_raw_address = None
+        self._registrant_telephone = None
         self._whois_server = None
         self._raw_text_record = None
         self._created_dt = None
@@ -55,6 +88,28 @@ class WhoisResponse(object):
 
         if valid_domain is not None:
             self.valid_domain = valid_domain
+        if registrant_name is not None:
+            self.registrant_name = registrant_name
+        if registrant_organization is not None:
+            self.registrant_organization = registrant_organization
+        if registrant_email is not None:
+            self.registrant_email = registrant_email
+        if registrant_street_number is not None:
+            self.registrant_street_number = registrant_street_number
+        if registrant_street is not None:
+            self.registrant_street = registrant_street
+        if registrant_city is not None:
+            self.registrant_city = registrant_city
+        if registrant_state_or_province is not None:
+            self.registrant_state_or_province = registrant_state_or_province
+        if registrant_postal_code is not None:
+            self.registrant_postal_code = registrant_postal_code
+        if registrant_country is not None:
+            self.registrant_country = registrant_country
+        if registrant_raw_address is not None:
+            self.registrant_raw_address = registrant_raw_address
+        if registrant_telephone is not None:
+            self.registrant_telephone = registrant_telephone
         if whois_server is not None:
             self.whois_server = whois_server
         if raw_text_record is not None:
@@ -84,6 +139,259 @@ class WhoisResponse(object):
         """
 
         self._valid_domain = valid_domain
+
+    @property
+    def registrant_name(self):
+        """Gets the registrant_name of this WhoisResponse.  # noqa: E501
+
+        Name of the domain registrant  # noqa: E501
+
+        :return: The registrant_name of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_name
+
+    @registrant_name.setter
+    def registrant_name(self, registrant_name):
+        """Sets the registrant_name of this WhoisResponse.
+
+        Name of the domain registrant  # noqa: E501
+
+        :param registrant_name: The registrant_name of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_name = registrant_name
+
+    @property
+    def registrant_organization(self):
+        """Gets the registrant_organization of this WhoisResponse.  # noqa: E501
+
+        Organization name of the domain registrant  # noqa: E501
+
+        :return: The registrant_organization of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_organization
+
+    @registrant_organization.setter
+    def registrant_organization(self, registrant_organization):
+        """Sets the registrant_organization of this WhoisResponse.
+
+        Organization name of the domain registrant  # noqa: E501
+
+        :param registrant_organization: The registrant_organization of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_organization = registrant_organization
+
+    @property
+    def registrant_email(self):
+        """Gets the registrant_email of this WhoisResponse.  # noqa: E501
+
+        Email address of the domain registrant  # noqa: E501
+
+        :return: The registrant_email of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_email
+
+    @registrant_email.setter
+    def registrant_email(self, registrant_email):
+        """Sets the registrant_email of this WhoisResponse.
+
+        Email address of the domain registrant  # noqa: E501
+
+        :param registrant_email: The registrant_email of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_email = registrant_email
+
+    @property
+    def registrant_street_number(self):
+        """Gets the registrant_street_number of this WhoisResponse.  # noqa: E501
+
+        Street number of the address of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_street_number of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_street_number
+
+    @registrant_street_number.setter
+    def registrant_street_number(self, registrant_street_number):
+        """Sets the registrant_street_number of this WhoisResponse.
+
+        Street number of the address of the domain registrant, if available  # noqa: E501
+
+        :param registrant_street_number: The registrant_street_number of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_street_number = registrant_street_number
+
+    @property
+    def registrant_street(self):
+        """Gets the registrant_street of this WhoisResponse.  # noqa: E501
+
+        Street name of the address of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_street of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_street
+
+    @registrant_street.setter
+    def registrant_street(self, registrant_street):
+        """Sets the registrant_street of this WhoisResponse.
+
+        Street name of the address of the domain registrant, if available  # noqa: E501
+
+        :param registrant_street: The registrant_street of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_street = registrant_street
+
+    @property
+    def registrant_city(self):
+        """Gets the registrant_city of this WhoisResponse.  # noqa: E501
+
+        City of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_city of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_city
+
+    @registrant_city.setter
+    def registrant_city(self, registrant_city):
+        """Sets the registrant_city of this WhoisResponse.
+
+        City of the domain registrant, if available  # noqa: E501
+
+        :param registrant_city: The registrant_city of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_city = registrant_city
+
+    @property
+    def registrant_state_or_province(self):
+        """Gets the registrant_state_or_province of this WhoisResponse.  # noqa: E501
+
+        State or Province of the address of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_state_or_province of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_state_or_province
+
+    @registrant_state_or_province.setter
+    def registrant_state_or_province(self, registrant_state_or_province):
+        """Sets the registrant_state_or_province of this WhoisResponse.
+
+        State or Province of the address of the domain registrant, if available  # noqa: E501
+
+        :param registrant_state_or_province: The registrant_state_or_province of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_state_or_province = registrant_state_or_province
+
+    @property
+    def registrant_postal_code(self):
+        """Gets the registrant_postal_code of this WhoisResponse.  # noqa: E501
+
+        Postal code of the address of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_postal_code of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_postal_code
+
+    @registrant_postal_code.setter
+    def registrant_postal_code(self, registrant_postal_code):
+        """Sets the registrant_postal_code of this WhoisResponse.
+
+        Postal code of the address of the domain registrant, if available  # noqa: E501
+
+        :param registrant_postal_code: The registrant_postal_code of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_postal_code = registrant_postal_code
+
+    @property
+    def registrant_country(self):
+        """Gets the registrant_country of this WhoisResponse.  # noqa: E501
+
+        Country of the address of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_country of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_country
+
+    @registrant_country.setter
+    def registrant_country(self, registrant_country):
+        """Sets the registrant_country of this WhoisResponse.
+
+        Country of the address of the domain registrant, if available  # noqa: E501
+
+        :param registrant_country: The registrant_country of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_country = registrant_country
+
+    @property
+    def registrant_raw_address(self):
+        """Gets the registrant_raw_address of this WhoisResponse.  # noqa: E501
+
+        Raw address string of the domain registrant, if available  # noqa: E501
+
+        :return: The registrant_raw_address of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_raw_address
+
+    @registrant_raw_address.setter
+    def registrant_raw_address(self, registrant_raw_address):
+        """Sets the registrant_raw_address of this WhoisResponse.
+
+        Raw address string of the domain registrant, if available  # noqa: E501
+
+        :param registrant_raw_address: The registrant_raw_address of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_raw_address = registrant_raw_address
+
+    @property
+    def registrant_telephone(self):
+        """Gets the registrant_telephone of this WhoisResponse.  # noqa: E501
+
+        Telephone number of the address of the domain registrant  # noqa: E501
+
+        :return: The registrant_telephone of this WhoisResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._registrant_telephone
+
+    @registrant_telephone.setter
+    def registrant_telephone(self, registrant_telephone):
+        """Sets the registrant_telephone of this WhoisResponse.
+
+        Telephone number of the address of the domain registrant  # noqa: E501
+
+        :param registrant_telephone: The registrant_telephone of this WhoisResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._registrant_telephone = registrant_telephone
 
     @property
     def whois_server(self):

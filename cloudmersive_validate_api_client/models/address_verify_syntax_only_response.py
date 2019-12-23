@@ -31,21 +31,36 @@ class AddressVerifySyntaxOnlyResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'valid_address': 'bool'
+        'valid_address': 'bool',
+        'domain': 'str',
+        'is_free_email_provider': 'bool',
+        'is_disposable': 'bool'
     }
 
     attribute_map = {
-        'valid_address': 'ValidAddress'
+        'valid_address': 'ValidAddress',
+        'domain': 'Domain',
+        'is_free_email_provider': 'IsFreeEmailProvider',
+        'is_disposable': 'IsDisposable'
     }
 
-    def __init__(self, valid_address=None):  # noqa: E501
+    def __init__(self, valid_address=None, domain=None, is_free_email_provider=None, is_disposable=None):  # noqa: E501
         """AddressVerifySyntaxOnlyResponse - a model defined in Swagger"""  # noqa: E501
 
         self._valid_address = None
+        self._domain = None
+        self._is_free_email_provider = None
+        self._is_disposable = None
         self.discriminator = None
 
         if valid_address is not None:
             self.valid_address = valid_address
+        if domain is not None:
+            self.domain = domain
+        if is_free_email_provider is not None:
+            self.is_free_email_provider = is_free_email_provider
+        if is_disposable is not None:
+            self.is_disposable = is_disposable
 
     @property
     def valid_address(self):
@@ -69,6 +84,75 @@ class AddressVerifySyntaxOnlyResponse(object):
         """
 
         self._valid_address = valid_address
+
+    @property
+    def domain(self):
+        """Gets the domain of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+
+        Domain name of the email address  # noqa: E501
+
+        :return: The domain of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this AddressVerifySyntaxOnlyResponse.
+
+        Domain name of the email address  # noqa: E501
+
+        :param domain: The domain of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._domain = domain
+
+    @property
+    def is_free_email_provider(self):
+        """Gets the is_free_email_provider of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+
+        True if the email domain name is a free provider (typically a free to sign up web email provider for consumers / personal use), false otherwise.  # noqa: E501
+
+        :return: The is_free_email_provider of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_free_email_provider
+
+    @is_free_email_provider.setter
+    def is_free_email_provider(self, is_free_email_provider):
+        """Sets the is_free_email_provider of this AddressVerifySyntaxOnlyResponse.
+
+        True if the email domain name is a free provider (typically a free to sign up web email provider for consumers / personal use), false otherwise.  # noqa: E501
+
+        :param is_free_email_provider: The is_free_email_provider of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_free_email_provider = is_free_email_provider
+
+    @property
+    def is_disposable(self):
+        """Gets the is_disposable of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+
+        True if the email address is a disposable email address, false otherwise; these disposable providers are not typically used to receive email and so will have a low likelihood of opening mail sent there.  # noqa: E501
+
+        :return: The is_disposable of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_disposable
+
+    @is_disposable.setter
+    def is_disposable(self, is_disposable):
+        """Sets the is_disposable of this AddressVerifySyntaxOnlyResponse.
+
+        True if the email address is a disposable email address, false otherwise; these disposable providers are not typically used to receive email and so will have a low likelihood of opening mail sent there.  # noqa: E501
+
+        :param is_disposable: The is_disposable of this AddressVerifySyntaxOnlyResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_disposable = is_disposable
 
     def to_dict(self):
         """Returns the model properties as a dict"""

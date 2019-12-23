@@ -1,18 +1,16 @@
-# cloudmersive_validate_api_client.AddressApi
+# cloudmersive_validate_api_client.LeadEnrichmentApi
 
 All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**address_parse_string**](AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
+[**lead_enrichment_enrich_lead**](LeadEnrichmentApi.md#lead_enrichment_enrich_lead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
 
 
-# **address_parse_string**
-> ParseAddressResponse address_parse_string(input)
+# **lead_enrichment_enrich_lead**
+> LeadEnrichmentResponse lead_enrichment_enrich_lead(request)
 
-Parse an unstructured input text string into an international, formatted address
-
-Uses machine learning and Natural Language Processing (NLP) to handle a wide array of cases, including non-standard and unstructured address strings across a wide array of countries and address formatting norms.
+Enrich an input lead with additional fields of data
 
 ### Example
 ```python
@@ -29,26 +27,26 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
-input = cloudmersive_validate_api_client.ParseAddressRequest() # ParseAddressRequest | Input parse request
+api_instance = cloudmersive_validate_api_client.LeadEnrichmentApi(cloudmersive_validate_api_client.ApiClient(configuration))
+request = cloudmersive_validate_api_client.LeadEnrichmentRequest() # LeadEnrichmentRequest | Input lead with known fields set, and unknown fields left blank (null)
 
 try:
-    # Parse an unstructured input text string into an international, formatted address
-    api_response = api_instance.address_parse_string(input)
+    # Enrich an input lead with additional fields of data
+    api_response = api_instance.lead_enrichment_enrich_lead(request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AddressApi->address_parse_string: %s\n" % e)
+    print("Exception when calling LeadEnrichmentApi->lead_enrichment_enrich_lead: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**ParseAddressRequest**](ParseAddressRequest.md)| Input parse request | 
+ **request** | [**LeadEnrichmentRequest**](LeadEnrichmentRequest.md)| Input lead with known fields set, and unknown fields left blank (null) | 
 
 ### Return type
 
-[**ParseAddressResponse**](ParseAddressResponse.md)
+[**LeadEnrichmentResponse**](LeadEnrichmentResponse.md)
 
 ### Authorization
 
