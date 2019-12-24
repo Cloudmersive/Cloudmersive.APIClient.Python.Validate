@@ -32,6 +32,8 @@ class LeadEnrichmentRequest(object):
     """
     swagger_types = {
         'contact_business_email': 'str',
+        'contact_first_name': 'str',
+        'contact_last_name': 'str',
         'company_name': 'str',
         'company_domain_name': 'str',
         'company_house_number': 'str',
@@ -40,11 +42,15 @@ class LeadEnrichmentRequest(object):
         'company_state_or_province': 'str',
         'company_postal_code': 'str',
         'company_country': 'str',
+        'company_country_code': 'str',
+        'company_telephone': 'str',
         'company_vat_number': 'str'
     }
 
     attribute_map = {
         'contact_business_email': 'ContactBusinessEmail',
+        'contact_first_name': 'ContactFirstName',
+        'contact_last_name': 'ContactLastName',
         'company_name': 'CompanyName',
         'company_domain_name': 'CompanyDomainName',
         'company_house_number': 'CompanyHouseNumber',
@@ -53,13 +59,17 @@ class LeadEnrichmentRequest(object):
         'company_state_or_province': 'CompanyStateOrProvince',
         'company_postal_code': 'CompanyPostalCode',
         'company_country': 'CompanyCountry',
+        'company_country_code': 'CompanyCountryCode',
+        'company_telephone': 'CompanyTelephone',
         'company_vat_number': 'CompanyVATNumber'
     }
 
-    def __init__(self, contact_business_email=None, company_name=None, company_domain_name=None, company_house_number=None, company_street=None, company_city=None, company_state_or_province=None, company_postal_code=None, company_country=None, company_vat_number=None):  # noqa: E501
+    def __init__(self, contact_business_email=None, contact_first_name=None, contact_last_name=None, company_name=None, company_domain_name=None, company_house_number=None, company_street=None, company_city=None, company_state_or_province=None, company_postal_code=None, company_country=None, company_country_code=None, company_telephone=None, company_vat_number=None):  # noqa: E501
         """LeadEnrichmentRequest - a model defined in Swagger"""  # noqa: E501
 
         self._contact_business_email = None
+        self._contact_first_name = None
+        self._contact_last_name = None
         self._company_name = None
         self._company_domain_name = None
         self._company_house_number = None
@@ -68,11 +78,17 @@ class LeadEnrichmentRequest(object):
         self._company_state_or_province = None
         self._company_postal_code = None
         self._company_country = None
+        self._company_country_code = None
+        self._company_telephone = None
         self._company_vat_number = None
         self.discriminator = None
 
         if contact_business_email is not None:
             self.contact_business_email = contact_business_email
+        if contact_first_name is not None:
+            self.contact_first_name = contact_first_name
+        if contact_last_name is not None:
+            self.contact_last_name = contact_last_name
         if company_name is not None:
             self.company_name = company_name
         if company_domain_name is not None:
@@ -89,6 +105,10 @@ class LeadEnrichmentRequest(object):
             self.company_postal_code = company_postal_code
         if company_country is not None:
             self.company_country = company_country
+        if company_country_code is not None:
+            self.company_country_code = company_country_code
+        if company_telephone is not None:
+            self.company_telephone = company_telephone
         if company_vat_number is not None:
             self.company_vat_number = company_vat_number
 
@@ -114,6 +134,52 @@ class LeadEnrichmentRequest(object):
         """
 
         self._contact_business_email = contact_business_email
+
+    @property
+    def contact_first_name(self):
+        """Gets the contact_first_name of this LeadEnrichmentRequest.  # noqa: E501
+
+        The person's first name for the lead  # noqa: E501
+
+        :return: The contact_first_name of this LeadEnrichmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._contact_first_name
+
+    @contact_first_name.setter
+    def contact_first_name(self, contact_first_name):
+        """Sets the contact_first_name of this LeadEnrichmentRequest.
+
+        The person's first name for the lead  # noqa: E501
+
+        :param contact_first_name: The contact_first_name of this LeadEnrichmentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._contact_first_name = contact_first_name
+
+    @property
+    def contact_last_name(self):
+        """Gets the contact_last_name of this LeadEnrichmentRequest.  # noqa: E501
+
+        The person's last name for the lead  # noqa: E501
+
+        :return: The contact_last_name of this LeadEnrichmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._contact_last_name
+
+    @contact_last_name.setter
+    def contact_last_name(self, contact_last_name):
+        """Sets the contact_last_name of this LeadEnrichmentRequest.
+
+        The person's last name for the lead  # noqa: E501
+
+        :param contact_last_name: The contact_last_name of this LeadEnrichmentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._contact_last_name = contact_last_name
 
     @property
     def company_name(self):
@@ -298,6 +364,52 @@ class LeadEnrichmentRequest(object):
         """
 
         self._company_country = company_country
+
+    @property
+    def company_country_code(self):
+        """Gets the company_country_code of this LeadEnrichmentRequest.  # noqa: E501
+
+        Country Code (2-letter ISO 3166-1) of the address of the company for the lead  # noqa: E501
+
+        :return: The company_country_code of this LeadEnrichmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_country_code
+
+    @company_country_code.setter
+    def company_country_code(self, company_country_code):
+        """Sets the company_country_code of this LeadEnrichmentRequest.
+
+        Country Code (2-letter ISO 3166-1) of the address of the company for the lead  # noqa: E501
+
+        :param company_country_code: The company_country_code of this LeadEnrichmentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._company_country_code = company_country_code
+
+    @property
+    def company_telephone(self):
+        """Gets the company_telephone of this LeadEnrichmentRequest.  # noqa: E501
+
+        Telephone of the company office for the lead  # noqa: E501
+
+        :return: The company_telephone of this LeadEnrichmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_telephone
+
+    @company_telephone.setter
+    def company_telephone(self, company_telephone):
+        """Sets the company_telephone of this LeadEnrichmentRequest.
+
+        Telephone of the company office for the lead  # noqa: E501
+
+        :param company_telephone: The company_telephone of this LeadEnrichmentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._company_telephone = company_telephone
 
     @property
     def company_vat_number(self):

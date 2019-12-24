@@ -38,7 +38,8 @@ class ParseAddressResponse(object):
         'city': 'str',
         'state_or_province': 'str',
         'postal_code': 'str',
-        'country': 'str'
+        'country_full_name': 'str',
+        'iso_two_letter_code': 'str'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class ParseAddressResponse(object):
         'city': 'City',
         'state_or_province': 'StateOrProvince',
         'postal_code': 'PostalCode',
-        'country': 'Country'
+        'country_full_name': 'CountryFullName',
+        'iso_two_letter_code': 'ISOTwoLetterCode'
     }
 
-    def __init__(self, successful=None, building=None, street_number=None, street=None, city=None, state_or_province=None, postal_code=None, country=None):  # noqa: E501
+    def __init__(self, successful=None, building=None, street_number=None, street=None, city=None, state_or_province=None, postal_code=None, country_full_name=None, iso_two_letter_code=None):  # noqa: E501
         """ParseAddressResponse - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -62,7 +64,8 @@ class ParseAddressResponse(object):
         self._city = None
         self._state_or_province = None
         self._postal_code = None
-        self._country = None
+        self._country_full_name = None
+        self._iso_two_letter_code = None
         self.discriminator = None
 
         if successful is not None:
@@ -79,8 +82,10 @@ class ParseAddressResponse(object):
             self.state_or_province = state_or_province
         if postal_code is not None:
             self.postal_code = postal_code
-        if country is not None:
-            self.country = country
+        if country_full_name is not None:
+            self.country_full_name = country_full_name
+        if iso_two_letter_code is not None:
+            self.iso_two_letter_code = iso_two_letter_code
 
     @property
     def successful(self):
@@ -244,27 +249,50 @@ class ParseAddressResponse(object):
         self._postal_code = postal_code
 
     @property
-    def country(self):
-        """Gets the country of this ParseAddressResponse.  # noqa: E501
+    def country_full_name(self):
+        """Gets the country_full_name of this ParseAddressResponse.  # noqa: E501
 
         Country of the address, if present in the address.  If not included in the address it will be null.  # noqa: E501
 
-        :return: The country of this ParseAddressResponse.  # noqa: E501
+        :return: The country_full_name of this ParseAddressResponse.  # noqa: E501
         :rtype: str
         """
-        return self._country
+        return self._country_full_name
 
-    @country.setter
-    def country(self, country):
-        """Sets the country of this ParseAddressResponse.
+    @country_full_name.setter
+    def country_full_name(self, country_full_name):
+        """Sets the country_full_name of this ParseAddressResponse.
 
         Country of the address, if present in the address.  If not included in the address it will be null.  # noqa: E501
 
-        :param country: The country of this ParseAddressResponse.  # noqa: E501
+        :param country_full_name: The country_full_name of this ParseAddressResponse.  # noqa: E501
         :type: str
         """
 
-        self._country = country
+        self._country_full_name = country_full_name
+
+    @property
+    def iso_two_letter_code(self):
+        """Gets the iso_two_letter_code of this ParseAddressResponse.  # noqa: E501
+
+        Two-letter ISO 3166-1 country code  # noqa: E501
+
+        :return: The iso_two_letter_code of this ParseAddressResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._iso_two_letter_code
+
+    @iso_two_letter_code.setter
+    def iso_two_letter_code(self, iso_two_letter_code):
+        """Sets the iso_two_letter_code of this ParseAddressResponse.
+
+        Two-letter ISO 3166-1 country code  # noqa: E501
+
+        :param iso_two_letter_code: The iso_two_letter_code of this ParseAddressResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._iso_two_letter_code = iso_two_letter_code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

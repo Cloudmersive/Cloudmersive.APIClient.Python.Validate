@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 2.0.8
+- Package version: 2.0.9
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -59,14 +59,14 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
-input = cloudmersive_validate_api_client.ParseAddressRequest() # ParseAddressRequest | Input parse request
+input = cloudmersive_validate_api_client.ValidateCountryRequest() # ValidateCountryRequest | Input request
 
 try:
-    # Parse an unstructured input text string into an international, formatted address
-    api_response = api_instance.address_parse_string(input)
+    # Validate and normalize country information, return ISO 3166-1 country codes and country name
+    api_response = api_instance.address_country(input)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AddressApi->address_parse_string: %s\n" % e)
+    print("Exception when calling AddressApi->address_country: %s\n" % e)
 
 ```
 
@@ -76,6 +76,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AddressApi* | [**address_country**](docs/AddressApi.md#address_country) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
 *AddressApi* | [**address_parse_string**](docs/AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
@@ -119,6 +120,8 @@ Class | Method | HTTP request | Description
  - [PhoneNumberValidationResponse](docs/PhoneNumberValidationResponse.md)
  - [UserAgentValidateRequest](docs/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/UserAgentValidateResponse.md)
+ - [ValidateCountryRequest](docs/ValidateCountryRequest.md)
+ - [ValidateCountryResponse](docs/ValidateCountryResponse.md)
  - [ValidateIdentifierRequest](docs/ValidateIdentifierRequest.md)
  - [ValidateIdentifierResponse](docs/ValidateIdentifierResponse.md)
  - [ValidateUrlRequestFull](docs/ValidateUrlRequestFull.md)
