@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 2.0.9
+- Package version: 2.1.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -77,6 +77,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AddressApi* | [**address_country**](docs/AddressApi.md#address_country) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
+*AddressApi* | [**address_get_timezone**](docs/AddressApi.md#address_get_timezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 *AddressApi* | [**address_parse_string**](docs/AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
@@ -110,6 +111,8 @@ Class | Method | HTTP request | Description
  - [GeolocateResponse](docs/GeolocateResponse.md)
  - [GetGenderRequest](docs/GetGenderRequest.md)
  - [GetGenderResponse](docs/GetGenderResponse.md)
+ - [GetTimezonesRequest](docs/GetTimezonesRequest.md)
+ - [GetTimezonesResponse](docs/GetTimezonesResponse.md)
  - [LastNameValidationRequest](docs/LastNameValidationRequest.md)
  - [LastNameValidationResponse](docs/LastNameValidationResponse.md)
  - [LeadEnrichmentRequest](docs/LeadEnrichmentRequest.md)
@@ -118,6 +121,7 @@ Class | Method | HTTP request | Description
  - [ParseAddressResponse](docs/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/PhoneNumberValidationResponse.md)
+ - [Timezone](docs/Timezone.md)
  - [UserAgentValidateRequest](docs/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/UserAgentValidateResponse.md)
  - [ValidateCountryRequest](docs/ValidateCountryRequest.md)
