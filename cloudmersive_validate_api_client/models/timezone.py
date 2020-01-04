@@ -32,25 +32,30 @@ class Timezone(object):
     """
     swagger_types = {
         'name': 'str',
-        'base_utc_offset': 'str'
+        'base_utc_offset': 'str',
+        'now': 'datetime'
     }
 
     attribute_map = {
         'name': 'Name',
-        'base_utc_offset': 'BaseUTCOffset'
+        'base_utc_offset': 'BaseUTCOffset',
+        'now': 'Now'
     }
 
-    def __init__(self, name=None, base_utc_offset=None):  # noqa: E501
+    def __init__(self, name=None, base_utc_offset=None, now=None):  # noqa: E501
         """Timezone - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._base_utc_offset = None
+        self._now = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
         if base_utc_offset is not None:
             self.base_utc_offset = base_utc_offset
+        if now is not None:
+            self.now = now
 
     @property
     def name(self):
@@ -97,6 +102,29 @@ class Timezone(object):
         """
 
         self._base_utc_offset = base_utc_offset
+
+    @property
+    def now(self):
+        """Gets the now of this Timezone.  # noqa: E501
+
+        The current time (Now) in this time zone  # noqa: E501
+
+        :return: The now of this Timezone.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._now
+
+    @now.setter
+    def now(self, now):
+        """Sets the now of this Timezone.
+
+        The current time (Now) in this time zone  # noqa: E501
+
+        :param now: The now of this Timezone.  # noqa: E501
+        :type: datetime
+        """
+
+        self._now = now
 
     def to_dict(self):
         """Returns the model properties as a dict"""
