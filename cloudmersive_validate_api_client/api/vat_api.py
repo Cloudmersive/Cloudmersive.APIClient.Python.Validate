@@ -34,9 +34,9 @@ class VatApi(object):
         self.api_client = api_client
 
     def vat_vat_lookup(self, input, **kwargs):  # noqa: E501
-        """Lookup a VAT code  # noqa: E501
+        """Validate a VAT number  # noqa: E501
 
-        Checks if a VAT code is valid, and if it is, returns more information about it  # noqa: E501
+        Checks if a VAT code is valid, and if it is, returns more information about it.  The first two letters of the VAT number must be letters that indicate the country, such as LU20260743.  Possible country codes include Austria (AT), Belgium (BE), Bulgaria (BG), Cyprus (CY), Czech Republic (CZ), Germany (DE), Denmark (DK), Estonia (EE), Greece (EL), Spain (ES), Finland (FI), France (FR), United Kingdom (GB), Croatia (HR), Hungary (HU), Ireland (IE), Italy (IT), Lithuania (LT), Luxembourg (LU), Latvia (LV), Malta (MT), The Netherlands (NL), Poland (PL), Portugal (PT), Romania (RO), Sweden (SE), Slovenia (SI), Slovakia (SK).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.vat_vat_lookup(input, async_req=True)
@@ -56,9 +56,9 @@ class VatApi(object):
             return data
 
     def vat_vat_lookup_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Lookup a VAT code  # noqa: E501
+        """Validate a VAT number  # noqa: E501
 
-        Checks if a VAT code is valid, and if it is, returns more information about it  # noqa: E501
+        Checks if a VAT code is valid, and if it is, returns more information about it.  The first two letters of the VAT number must be letters that indicate the country, such as LU20260743.  Possible country codes include Austria (AT), Belgium (BE), Bulgaria (BG), Cyprus (CY), Czech Republic (CZ), Germany (DE), Denmark (DK), Estonia (EE), Greece (EL), Spain (ES), Finland (FI), France (FR), United Kingdom (GB), Croatia (HR), Hungary (HU), Ireland (IE), Italy (IT), Lithuania (LT), Luxembourg (LU), Latvia (LV), Malta (MT), The Netherlands (NL), Poland (PL), Portugal (PT), Romania (RO), Sweden (SE), Slovenia (SI), Slovakia (SK).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.vat_vat_lookup_with_http_info(input, async_req=True)
