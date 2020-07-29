@@ -36,6 +36,7 @@ class ValidateCountryResponse(object):
         'iso_two_letter_code': 'str',
         'fips_two_letter_code': 'str',
         'three_letter_code': 'str',
+        'is_european_union_member': 'bool',
         'timezones': 'list[Timezone]'
     }
 
@@ -45,10 +46,11 @@ class ValidateCountryResponse(object):
         'iso_two_letter_code': 'ISOTwoLetterCode',
         'fips_two_letter_code': 'FIPSTwoLetterCode',
         'three_letter_code': 'ThreeLetterCode',
+        'is_european_union_member': 'IsEuropeanUnionMember',
         'timezones': 'Timezones'
     }
 
-    def __init__(self, successful=None, country_full_name=None, iso_two_letter_code=None, fips_two_letter_code=None, three_letter_code=None, timezones=None):  # noqa: E501
+    def __init__(self, successful=None, country_full_name=None, iso_two_letter_code=None, fips_two_letter_code=None, three_letter_code=None, is_european_union_member=None, timezones=None):  # noqa: E501
         """ValidateCountryResponse - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -56,6 +58,7 @@ class ValidateCountryResponse(object):
         self._iso_two_letter_code = None
         self._fips_two_letter_code = None
         self._three_letter_code = None
+        self._is_european_union_member = None
         self._timezones = None
         self.discriminator = None
 
@@ -69,6 +72,8 @@ class ValidateCountryResponse(object):
             self.fips_two_letter_code = fips_two_letter_code
         if three_letter_code is not None:
             self.three_letter_code = three_letter_code
+        if is_european_union_member is not None:
+            self.is_european_union_member = is_european_union_member
         if timezones is not None:
             self.timezones = timezones
 
@@ -186,6 +191,29 @@ class ValidateCountryResponse(object):
         """
 
         self._three_letter_code = three_letter_code
+
+    @property
+    def is_european_union_member(self):
+        """Gets the is_european_union_member of this ValidateCountryResponse.  # noqa: E501
+
+        True if this country is currently a member of the European Union (EU), false otherwise  # noqa: E501
+
+        :return: The is_european_union_member of this ValidateCountryResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_european_union_member
+
+    @is_european_union_member.setter
+    def is_european_union_member(self, is_european_union_member):
+        """Sets the is_european_union_member of this ValidateCountryResponse.
+
+        True if this country is currently a member of the European Union (EU), false otherwise  # noqa: E501
+
+        :param is_european_union_member: The is_european_union_member of this ValidateCountryResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_european_union_member = is_european_union_member
 
     @property
     def timezones(self):

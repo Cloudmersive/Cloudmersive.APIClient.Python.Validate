@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.0.1
+- Package version: 3.0.2
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -62,11 +62,11 @@ api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate
 input = cloudmersive_validate_api_client.ValidateCountryRequest() # ValidateCountryRequest | Input request
 
 try:
-    # Validate and normalize country information, return ISO 3166-1 country codes and country name
-    api_response = api_instance.address_country(input)
+    # Check if a country is a member of the European Union (EU)
+    api_response = api_instance.address_check_eu_membership(input)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AddressApi->address_country: %s\n" % e)
+    print("Exception when calling AddressApi->address_check_eu_membership: %s\n" % e)
 
 ```
 
@@ -76,10 +76,12 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AddressApi* | [**address_check_eu_membership**](docs/AddressApi.md#address_check_eu_membership) | **POST** /validate/address/country/check-eu-membership | Check if a country is a member of the European Union (EU)
 *AddressApi* | [**address_country**](docs/AddressApi.md#address_country) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
 *AddressApi* | [**address_get_timezone**](docs/AddressApi.md#address_get_timezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 *AddressApi* | [**address_parse_string**](docs/AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *AddressApi* | [**address_validate_address**](docs/AddressApi.md#address_validate_address) | **POST** /validate/address/street-address | Validate a street address
+*AddressApi* | [**address_validate_postal_code**](docs/AddressApi.md#address_validate_postal_code) | **POST** /validate/address/postal-code | Validate a postal code, get location information about it
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domain_url_full**](docs/DomainApi.md#domain_url_full) | **POST** /validate/domain/url/full | Validate a URL fully
@@ -131,6 +133,8 @@ Class | Method | HTTP request | Description
  - [ValidateCountryResponse](docs/ValidateCountryResponse.md)
  - [ValidateIdentifierRequest](docs/ValidateIdentifierRequest.md)
  - [ValidateIdentifierResponse](docs/ValidateIdentifierResponse.md)
+ - [ValidatePostalCodeRequest](docs/ValidatePostalCodeRequest.md)
+ - [ValidatePostalCodeResponse](docs/ValidatePostalCodeResponse.md)
  - [ValidateUrlRequestFull](docs/ValidateUrlRequestFull.md)
  - [ValidateUrlRequestSyntaxOnly](docs/ValidateUrlRequestSyntaxOnly.md)
  - [ValidateUrlResponseFull](docs/ValidateUrlResponseFull.md)
