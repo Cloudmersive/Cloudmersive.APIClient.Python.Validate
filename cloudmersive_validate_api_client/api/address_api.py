@@ -231,6 +231,93 @@ class AddressApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def address_country_list(self, **kwargs):  # noqa: E501
+        """Get a list of ISO 3166-1 countries  # noqa: E501
+
+        Enumerates the list of ISO 3166-1 countries, including name, country codes, and more.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.address_country_list(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: CountryListResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.address_country_list_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.address_country_list_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def address_country_list_with_http_info(self, **kwargs):  # noqa: E501
+        """Get a list of ISO 3166-1 countries  # noqa: E501
+
+        Enumerates the list of ISO 3166-1 countries, including name, country codes, and more.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.address_country_list_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: CountryListResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method address_country_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/address/country/list', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CountryListResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def address_get_timezone(self, input, **kwargs):  # noqa: E501
         """Gets IANA/Olsen time zones for a country  # noqa: E501
 
@@ -528,6 +615,105 @@ class AddressApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def address_validate_city(self, input, **kwargs):  # noqa: E501
+        """Validate a City and State/Province combination, get location information about it  # noqa: E501
+
+        Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.address_validate_city(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ValidateCityRequest input: Input parse request (required)
+        :return: ValidateCityResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.address_validate_city_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.address_validate_city_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def address_validate_city_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Validate a City and State/Province combination, get location information about it  # noqa: E501
+
+        Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.address_validate_city_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ValidateCityRequest input: Input parse request (required)
+        :return: ValidateCityResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method address_validate_city" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `address_validate_city`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/address/city', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ValidateCityResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def address_validate_postal_code(self, input, **kwargs):  # noqa: E501
         """Validate a postal code, get location information about it  # noqa: E501
 
@@ -620,6 +806,105 @@ class AddressApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ValidatePostalCodeResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def address_validate_state(self, input, **kwargs):  # noqa: E501
+        """Validate a state or province, name or abbreviation, get location information about it  # noqa: E501
+
+        Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.address_validate_state(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ValidateStateRequest input: Input parse request (required)
+        :return: ValidateStateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.address_validate_state_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.address_validate_state_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def address_validate_state_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Validate a state or province, name or abbreviation, get location information about it  # noqa: E501
+
+        Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.address_validate_state_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ValidateStateRequest input: Input parse request (required)
+        :return: ValidateStateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method address_validate_state" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `address_validate_state`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/address/state', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ValidateStateResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

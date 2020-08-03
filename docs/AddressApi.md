@@ -6,10 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**address_check_eu_membership**](AddressApi.md#address_check_eu_membership) | **POST** /validate/address/country/check-eu-membership | Check if a country is a member of the European Union (EU)
 [**address_country**](AddressApi.md#address_country) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
+[**address_country_list**](AddressApi.md#address_country_list) | **POST** /validate/address/country/list | Get a list of ISO 3166-1 countries
 [**address_get_timezone**](AddressApi.md#address_get_timezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 [**address_parse_string**](AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 [**address_validate_address**](AddressApi.md#address_validate_address) | **POST** /validate/address/street-address | Validate a street address
+[**address_validate_city**](AddressApi.md#address_validate_city) | **POST** /validate/address/city | Validate a City and State/Province combination, get location information about it
 [**address_validate_postal_code**](AddressApi.md#address_validate_postal_code) | **POST** /validate/address/postal-code | Validate a postal code, get location information about it
+[**address_validate_state**](AddressApi.md#address_validate_state) | **POST** /validate/address/state | Validate a state or province, name or abbreviation, get location information about it
 
 
 # **address_check_eu_membership**
@@ -116,6 +119,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **address_country_list**
+> CountryListResult address_country_list()
+
+Get a list of ISO 3166-1 countries
+
+Enumerates the list of ISO 3166-1 countries, including name, country codes, and more.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
+
+try:
+    # Get a list of ISO 3166-1 countries
+    api_response = api_instance.address_country_list()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AddressApi->address_country_list: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CountryListResult**](CountryListResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -282,6 +335,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **address_validate_city**
+> ValidateCityResponse address_validate_city(input)
+
+Validate a City and State/Province combination, get location information about it
+
+Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
+input = cloudmersive_validate_api_client.ValidateCityRequest() # ValidateCityRequest | Input parse request
+
+try:
+    # Validate a City and State/Province combination, get location information about it
+    api_response = api_instance.address_validate_city(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AddressApi->address_validate_city: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ValidateCityRequest**](ValidateCityRequest.md)| Input parse request | 
+
+### Return type
+
+[**ValidateCityResponse**](ValidateCityResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **address_validate_postal_code**
 > ValidatePostalCodeResponse address_validate_postal_code(input)
 
@@ -324,6 +431,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidatePostalCodeResponse**](ValidatePostalCodeResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **address_validate_state**
+> ValidateStateResponse address_validate_state(input)
+
+Validate a state or province, name or abbreviation, get location information about it
+
+Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
+input = cloudmersive_validate_api_client.ValidateStateRequest() # ValidateStateRequest | Input parse request
+
+try:
+    # Validate a state or province, name or abbreviation, get location information about it
+    api_response = api_instance.address_validate_state(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AddressApi->address_validate_state: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ValidateStateRequest**](ValidateStateRequest.md)| Input parse request | 
+
+### Return type
+
+[**ValidateStateResponse**](ValidateStateResponse.md)
 
 ### Authorization
 
