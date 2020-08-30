@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.0.3
+- Package version: 3.0.4
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**email_address_get_servers**](docs/EmailApi.md#email_address_get_servers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**email_full_validation**](docs/EmailApi.md#email_full_validation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**email_post**](docs/EmailApi.md#email_post) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
+*IPAddressApi* | [**i_p_address_is_tor_node**](docs/IPAddressApi.md#i_p_address_is_tor_node) | **POST** /validate/ip/is-tor-node | Check if IP address is a Tor node server
 *IPAddressApi* | [**i_p_address_post**](docs/IPAddressApi.md#i_p_address_post) | **POST** /validate/ip/geolocate | Geolocate an IP address
 *LeadEnrichmentApi* | [**lead_enrichment_enrich_lead**](docs/LeadEnrichmentApi.md#lead_enrichment_enrich_lead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
 *NameApi* | [**name_get_gender**](docs/NameApi.md#name_get_gender) | **POST** /validate/name/get-gender | Get the gender of a first name
@@ -130,6 +131,7 @@ Class | Method | HTTP request | Description
  - [PhoneNumberValidateRequest](docs/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/PhoneNumberValidationResponse.md)
  - [Timezone](docs/Timezone.md)
+ - [TorNodeResponse](docs/TorNodeResponse.md)
  - [UserAgentValidateRequest](docs/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/UserAgentValidateResponse.md)
  - [ValidateAddressRequest](docs/ValidateAddressRequest.md)
