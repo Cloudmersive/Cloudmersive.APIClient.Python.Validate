@@ -34,23 +34,32 @@ class CountryDetails(object):
         'country_name': 'str',
         'three_letter_code': 'str',
         'iso_two_letter_code': 'str',
-        'is_european_union_member': 'bool'
+        'is_european_union_member': 'bool',
+        'iso_currency_code': 'str',
+        'currency_symbol': 'str',
+        'currency_english_name': 'str'
     }
 
     attribute_map = {
         'country_name': 'CountryName',
         'three_letter_code': 'ThreeLetterCode',
         'iso_two_letter_code': 'ISOTwoLetterCode',
-        'is_european_union_member': 'IsEuropeanUnionMember'
+        'is_european_union_member': 'IsEuropeanUnionMember',
+        'iso_currency_code': 'ISOCurrencyCode',
+        'currency_symbol': 'CurrencySymbol',
+        'currency_english_name': 'CurrencyEnglishName'
     }
 
-    def __init__(self, country_name=None, three_letter_code=None, iso_two_letter_code=None, is_european_union_member=None):  # noqa: E501
+    def __init__(self, country_name=None, three_letter_code=None, iso_two_letter_code=None, is_european_union_member=None, iso_currency_code=None, currency_symbol=None, currency_english_name=None):  # noqa: E501
         """CountryDetails - a model defined in Swagger"""  # noqa: E501
 
         self._country_name = None
         self._three_letter_code = None
         self._iso_two_letter_code = None
         self._is_european_union_member = None
+        self._iso_currency_code = None
+        self._currency_symbol = None
+        self._currency_english_name = None
         self.discriminator = None
 
         if country_name is not None:
@@ -61,6 +70,12 @@ class CountryDetails(object):
             self.iso_two_letter_code = iso_two_letter_code
         if is_european_union_member is not None:
             self.is_european_union_member = is_european_union_member
+        if iso_currency_code is not None:
+            self.iso_currency_code = iso_currency_code
+        if currency_symbol is not None:
+            self.currency_symbol = currency_symbol
+        if currency_english_name is not None:
+            self.currency_english_name = currency_english_name
 
     @property
     def country_name(self):
@@ -153,6 +168,75 @@ class CountryDetails(object):
         """
 
         self._is_european_union_member = is_european_union_member
+
+    @property
+    def iso_currency_code(self):
+        """Gets the iso_currency_code of this CountryDetails.  # noqa: E501
+
+        ISO 4217 currency three-letter code associated with the country  # noqa: E501
+
+        :return: The iso_currency_code of this CountryDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._iso_currency_code
+
+    @iso_currency_code.setter
+    def iso_currency_code(self, iso_currency_code):
+        """Sets the iso_currency_code of this CountryDetails.
+
+        ISO 4217 currency three-letter code associated with the country  # noqa: E501
+
+        :param iso_currency_code: The iso_currency_code of this CountryDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._iso_currency_code = iso_currency_code
+
+    @property
+    def currency_symbol(self):
+        """Gets the currency_symbol of this CountryDetails.  # noqa: E501
+
+        Symbol associated with the currency  # noqa: E501
+
+        :return: The currency_symbol of this CountryDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_symbol
+
+    @currency_symbol.setter
+    def currency_symbol(self, currency_symbol):
+        """Sets the currency_symbol of this CountryDetails.
+
+        Symbol associated with the currency  # noqa: E501
+
+        :param currency_symbol: The currency_symbol of this CountryDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_symbol = currency_symbol
+
+    @property
+    def currency_english_name(self):
+        """Gets the currency_english_name of this CountryDetails.  # noqa: E501
+
+        Full name of the currency  # noqa: E501
+
+        :return: The currency_english_name of this CountryDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_english_name
+
+    @currency_english_name.setter
+    def currency_english_name(self, currency_english_name):
+        """Sets the currency_english_name of this CountryDetails.
+
+        Full name of the currency  # noqa: E501
+
+        :param currency_english_name: The currency_english_name of this CountryDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_english_name = currency_english_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

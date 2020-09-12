@@ -37,7 +37,10 @@ class ValidateCountryResponse(object):
         'fips_two_letter_code': 'str',
         'three_letter_code': 'str',
         'is_european_union_member': 'bool',
-        'timezones': 'list[Timezone]'
+        'timezones': 'list[Timezone]',
+        'iso_currency_code': 'str',
+        'currency_symbol': 'str',
+        'currency_english_name': 'str'
     }
 
     attribute_map = {
@@ -47,10 +50,13 @@ class ValidateCountryResponse(object):
         'fips_two_letter_code': 'FIPSTwoLetterCode',
         'three_letter_code': 'ThreeLetterCode',
         'is_european_union_member': 'IsEuropeanUnionMember',
-        'timezones': 'Timezones'
+        'timezones': 'Timezones',
+        'iso_currency_code': 'ISOCurrencyCode',
+        'currency_symbol': 'CurrencySymbol',
+        'currency_english_name': 'CurrencyEnglishName'
     }
 
-    def __init__(self, successful=None, country_full_name=None, iso_two_letter_code=None, fips_two_letter_code=None, three_letter_code=None, is_european_union_member=None, timezones=None):  # noqa: E501
+    def __init__(self, successful=None, country_full_name=None, iso_two_letter_code=None, fips_two_letter_code=None, three_letter_code=None, is_european_union_member=None, timezones=None, iso_currency_code=None, currency_symbol=None, currency_english_name=None):  # noqa: E501
         """ValidateCountryResponse - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -60,6 +66,9 @@ class ValidateCountryResponse(object):
         self._three_letter_code = None
         self._is_european_union_member = None
         self._timezones = None
+        self._iso_currency_code = None
+        self._currency_symbol = None
+        self._currency_english_name = None
         self.discriminator = None
 
         if successful is not None:
@@ -76,6 +85,12 @@ class ValidateCountryResponse(object):
             self.is_european_union_member = is_european_union_member
         if timezones is not None:
             self.timezones = timezones
+        if iso_currency_code is not None:
+            self.iso_currency_code = iso_currency_code
+        if currency_symbol is not None:
+            self.currency_symbol = currency_symbol
+        if currency_english_name is not None:
+            self.currency_english_name = currency_english_name
 
     @property
     def successful(self):
@@ -237,6 +252,75 @@ class ValidateCountryResponse(object):
         """
 
         self._timezones = timezones
+
+    @property
+    def iso_currency_code(self):
+        """Gets the iso_currency_code of this ValidateCountryResponse.  # noqa: E501
+
+        ISO 4217 currency three-letter code associated with the country  # noqa: E501
+
+        :return: The iso_currency_code of this ValidateCountryResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._iso_currency_code
+
+    @iso_currency_code.setter
+    def iso_currency_code(self, iso_currency_code):
+        """Sets the iso_currency_code of this ValidateCountryResponse.
+
+        ISO 4217 currency three-letter code associated with the country  # noqa: E501
+
+        :param iso_currency_code: The iso_currency_code of this ValidateCountryResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._iso_currency_code = iso_currency_code
+
+    @property
+    def currency_symbol(self):
+        """Gets the currency_symbol of this ValidateCountryResponse.  # noqa: E501
+
+        Symbol associated with the currency  # noqa: E501
+
+        :return: The currency_symbol of this ValidateCountryResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_symbol
+
+    @currency_symbol.setter
+    def currency_symbol(self, currency_symbol):
+        """Sets the currency_symbol of this ValidateCountryResponse.
+
+        Symbol associated with the currency  # noqa: E501
+
+        :param currency_symbol: The currency_symbol of this ValidateCountryResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_symbol = currency_symbol
+
+    @property
+    def currency_english_name(self):
+        """Gets the currency_english_name of this ValidateCountryResponse.  # noqa: E501
+
+        Full name of the currency  # noqa: E501
+
+        :return: The currency_english_name of this ValidateCountryResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_english_name
+
+    @currency_english_name.setter
+    def currency_english_name(self, currency_english_name):
+        """Sets the currency_english_name of this ValidateCountryResponse.
+
+        Full name of the currency  # noqa: E501
+
+        :param currency_english_name: The currency_english_name of this ValidateCountryResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_english_name = currency_english_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
