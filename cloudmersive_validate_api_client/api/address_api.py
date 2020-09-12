@@ -519,7 +519,7 @@ class AddressApi(object):
     def address_validate_address(self, input, **kwargs):  # noqa: E501
         """Validate a street address  # noqa: E501
 
-        Determines if an input structured street address is valid or invalid.  If the address is valid, also returns the latitude and longitude of the address.  # noqa: E501
+        Determines if an input structured street address is valid or invalid.  If the address is valid, also returns the latitude and longitude of the address.  Supports all major international addresses.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_address(input, async_req=True)
@@ -541,7 +541,7 @@ class AddressApi(object):
     def address_validate_address_with_http_info(self, input, **kwargs):  # noqa: E501
         """Validate a street address  # noqa: E501
 
-        Determines if an input structured street address is valid or invalid.  If the address is valid, also returns the latitude and longitude of the address.  # noqa: E501
+        Determines if an input structured street address is valid or invalid.  If the address is valid, also returns the latitude and longitude of the address.  Supports all major international addresses.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_address_with_http_info(input, async_req=True)
@@ -618,7 +618,7 @@ class AddressApi(object):
     def address_validate_city(self, input, **kwargs):  # noqa: E501
         """Validate a City and State/Province combination, get location information about it  # noqa: E501
 
-        Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.  # noqa: E501
+        Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.  Supports all major international addresses.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_city(input, async_req=True)
@@ -640,7 +640,7 @@ class AddressApi(object):
     def address_validate_city_with_http_info(self, input, **kwargs):  # noqa: E501
         """Validate a City and State/Province combination, get location information about it  # noqa: E501
 
-        Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.  # noqa: E501
+        Checks if the input city and state name or code is valid, and returns information about it such as normalized City name, State name and more.  Supports all major international addresses.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_city_with_http_info(input, async_req=True)
@@ -717,7 +717,7 @@ class AddressApi(object):
     def address_validate_postal_code(self, input, **kwargs):  # noqa: E501
         """Validate a postal code, get location information about it  # noqa: E501
 
-        Checks if the input postal code is valid, and returns information about it such as City, State and more.  # noqa: E501
+        Checks if the input postal code is valid, and returns information about it such as City, State and more.  Supports all major countries.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_postal_code(input, async_req=True)
@@ -739,7 +739,7 @@ class AddressApi(object):
     def address_validate_postal_code_with_http_info(self, input, **kwargs):  # noqa: E501
         """Validate a postal code, get location information about it  # noqa: E501
 
-        Checks if the input postal code is valid, and returns information about it such as City, State and more.  # noqa: E501
+        Checks if the input postal code is valid, and returns information about it such as City, State and more.  Supports all major countries.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_postal_code_with_http_info(input, async_req=True)
@@ -816,7 +816,7 @@ class AddressApi(object):
     def address_validate_state(self, input, **kwargs):  # noqa: E501
         """Validate a state or province, name or abbreviation, get location information about it  # noqa: E501
 
-        Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.  # noqa: E501
+        Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.  Supports all major countries.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_state(input, async_req=True)
@@ -838,7 +838,7 @@ class AddressApi(object):
     def address_validate_state_with_http_info(self, input, **kwargs):  # noqa: E501
         """Validate a state or province, name or abbreviation, get location information about it  # noqa: E501
 
-        Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.  # noqa: E501
+        Checks if the input state name or code is valid, and returns information about it such as normalized State name and more.  Supports all major countries.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.address_validate_state_with_http_info(input, async_req=True)
