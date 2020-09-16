@@ -40,7 +40,9 @@ class ValidateCountryResponse(object):
         'timezones': 'list[Timezone]',
         'iso_currency_code': 'str',
         'currency_symbol': 'str',
-        'currency_english_name': 'str'
+        'currency_english_name': 'str',
+        'region': 'str',
+        'subregion': 'str'
     }
 
     attribute_map = {
@@ -53,10 +55,12 @@ class ValidateCountryResponse(object):
         'timezones': 'Timezones',
         'iso_currency_code': 'ISOCurrencyCode',
         'currency_symbol': 'CurrencySymbol',
-        'currency_english_name': 'CurrencyEnglishName'
+        'currency_english_name': 'CurrencyEnglishName',
+        'region': 'Region',
+        'subregion': 'Subregion'
     }
 
-    def __init__(self, successful=None, country_full_name=None, iso_two_letter_code=None, fips_two_letter_code=None, three_letter_code=None, is_european_union_member=None, timezones=None, iso_currency_code=None, currency_symbol=None, currency_english_name=None):  # noqa: E501
+    def __init__(self, successful=None, country_full_name=None, iso_two_letter_code=None, fips_two_letter_code=None, three_letter_code=None, is_european_union_member=None, timezones=None, iso_currency_code=None, currency_symbol=None, currency_english_name=None, region=None, subregion=None):  # noqa: E501
         """ValidateCountryResponse - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -69,6 +73,8 @@ class ValidateCountryResponse(object):
         self._iso_currency_code = None
         self._currency_symbol = None
         self._currency_english_name = None
+        self._region = None
+        self._subregion = None
         self.discriminator = None
 
         if successful is not None:
@@ -91,6 +97,10 @@ class ValidateCountryResponse(object):
             self.currency_symbol = currency_symbol
         if currency_english_name is not None:
             self.currency_english_name = currency_english_name
+        if region is not None:
+            self.region = region
+        if subregion is not None:
+            self.subregion = subregion
 
     @property
     def successful(self):
@@ -321,6 +331,52 @@ class ValidateCountryResponse(object):
         """
 
         self._currency_english_name = currency_english_name
+
+    @property
+    def region(self):
+        """Gets the region of this ValidateCountryResponse.  # noqa: E501
+
+        Region (continent) in which the country is located; possible values are None, Europe, Americas, Asia, Africa, Oceania  # noqa: E501
+
+        :return: The region of this ValidateCountryResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this ValidateCountryResponse.
+
+        Region (continent) in which the country is located; possible values are None, Europe, Americas, Asia, Africa, Oceania  # noqa: E501
+
+        :param region: The region of this ValidateCountryResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
+
+    @property
+    def subregion(self):
+        """Gets the subregion of this ValidateCountryResponse.  # noqa: E501
+
+        Subregion in which the country is located; possible values are None, NorthernEurope, WesternEurope, SouthernEurope, EasternEurope, CentralAmerica, NorthernAmerica, SouthAmerica, EasternAfrica, MiddleAfrica, NorthernAfrica , SouthernAfrica , WesternAfrica , CentralAsia , EasternAsia , SouthernAsia , SouthEasternAsia , WesternAsia , Southern , Middle , AustraliaandNewZealand , Melanesia , Polynesia , Micronesia , Caribbean,  # noqa: E501
+
+        :return: The subregion of this ValidateCountryResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._subregion
+
+    @subregion.setter
+    def subregion(self, subregion):
+        """Sets the subregion of this ValidateCountryResponse.
+
+        Subregion in which the country is located; possible values are None, NorthernEurope, WesternEurope, SouthernEurope, EasternEurope, CentralAmerica, NorthernAmerica, SouthAmerica, EasternAfrica, MiddleAfrica, NorthernAfrica , SouthernAfrica , WesternAfrica , CentralAsia , EasternAsia , SouthernAsia , SouthEasternAsia , WesternAsia , Southern , Middle , AustraliaandNewZealand , Melanesia , Polynesia , Micronesia , Caribbean,  # noqa: E501
+
+        :param subregion: The subregion of this ValidateCountryResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._subregion = subregion
 
     def to_dict(self):
         """Returns the model properties as a dict"""
