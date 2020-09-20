@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**domain_check**](DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 [**domain_post**](DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
+[**domain_quality_score**](DomainApi.md#domain_quality_score) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
 [**domain_url_full**](DomainApi.md#domain_url_full) | **POST** /validate/domain/url/full | Validate a URL fully
 [**domain_url_syntax_only**](DomainApi.md#domain_url_syntax_only) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 
@@ -106,6 +107,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WhoisResponse**](WhoisResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: text/javascript, application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **domain_quality_score**
+> DomainQualityResponse domain_quality_score(domain)
+
+Validate a domain name's quality score
+
+Check the quality of a domain name.  Higher quality scores indicate more trust and authority in the domain name.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.DomainApi(cloudmersive_validate_api_client.ApiClient(configuration))
+domain = 'domain_example' # str | Domain name to check, for example \"cloudmersive.com\".
+
+try:
+    # Validate a domain name's quality score
+    api_response = api_instance.domain_quality_score(domain)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DomainApi->domain_quality_score: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **str**| Domain name to check, for example \&quot;cloudmersive.com\&quot;. | 
+
+### Return type
+
+[**DomainQualityResponse**](DomainQualityResponse.md)
 
 ### Authorization
 

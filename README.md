@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.0.7
+- Package version: 3.0.8
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**address_validate_state**](docs/AddressApi.md#address_validate_state) | **POST** /validate/address/state | Validate a state or province, name or abbreviation, get location information about it
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
+*DomainApi* | [**domain_quality_score**](docs/DomainApi.md#domain_quality_score) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
 *DomainApi* | [**domain_url_full**](docs/DomainApi.md#domain_url_full) | **POST** /validate/domain/url/full | Validate a URL fully
 *DomainApi* | [**domain_url_syntax_only**](docs/DomainApi.md#domain_url_syntax_only) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**email_address_get_servers**](docs/EmailApi.md#email_address_get_servers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
@@ -115,6 +116,7 @@ Class | Method | HTTP request | Description
  - [CheckResponse](docs/CheckResponse.md)
  - [CountryDetails](docs/CountryDetails.md)
  - [CountryListResult](docs/CountryListResult.md)
+ - [DomainQualityResponse](docs/DomainQualityResponse.md)
  - [FirstNameValidationRequest](docs/FirstNameValidationRequest.md)
  - [FirstNameValidationResponse](docs/FirstNameValidationResponse.md)
  - [FullEmailValidationResponse](docs/FullEmailValidationResponse.md)
