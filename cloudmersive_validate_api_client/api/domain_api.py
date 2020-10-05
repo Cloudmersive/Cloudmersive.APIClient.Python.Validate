@@ -234,7 +234,7 @@ class DomainApi(object):
     def domain_quality_score(self, domain, **kwargs):  # noqa: E501
         """Validate a domain name's quality score  # noqa: E501
 
-        Check the quality of a domain name.  Higher quality scores indicate more trust and authority in the domain name.  # noqa: E501
+        Check the quality of a domain name.  Supports over 9 million domain names.  Higher quality scores indicate more trust and authority in the domain name, with values ranging from 0.0 (low quality) to 10.0 (maximum quality).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.domain_quality_score(domain, async_req=True)
@@ -256,7 +256,7 @@ class DomainApi(object):
     def domain_quality_score_with_http_info(self, domain, **kwargs):  # noqa: E501
         """Validate a domain name's quality score  # noqa: E501
 
-        Check the quality of a domain name.  Higher quality scores indicate more trust and authority in the domain name.  # noqa: E501
+        Check the quality of a domain name.  Supports over 9 million domain names.  Higher quality scores indicate more trust and authority in the domain name, with values ranging from 0.0 (low quality) to 10.0 (maximum quality).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.domain_quality_score_with_http_info(domain, async_req=True)

@@ -7,10 +7,12 @@ Method | HTTP request | Description
 [**address_check_eu_membership**](AddressApi.md#address_check_eu_membership) | **POST** /validate/address/country/check-eu-membership | Check if a country is a member of the European Union (EU)
 [**address_country**](AddressApi.md#address_country) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
 [**address_country_list**](AddressApi.md#address_country_list) | **POST** /validate/address/country/list | Get a list of ISO 3166-1 countries
+[**address_geocode**](AddressApi.md#address_geocode) | **POST** /validate/address/geocode | Geocode a street address into latitude and longitude
 [**address_get_country_currency**](AddressApi.md#address_get_country_currency) | **POST** /validate/address/country/get-currency | Get the currency of the input country
 [**address_get_country_region**](AddressApi.md#address_get_country_region) | **POST** /validate/address/country/get-region | Get the region, subregion and continent of the country
 [**address_get_timezone**](AddressApi.md#address_get_timezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 [**address_parse_string**](AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
+[**address_reverse_geocode_address**](AddressApi.md#address_reverse_geocode_address) | **POST** /validate/address/geocode/reverse | Reverse geocode a lattitude and longitude into an address
 [**address_validate_address**](AddressApi.md#address_validate_address) | **POST** /validate/address/street-address | Validate a street address
 [**address_validate_city**](AddressApi.md#address_validate_city) | **POST** /validate/address/city | Validate a City and State/Province combination, get location information about it
 [**address_validate_postal_code**](AddressApi.md#address_validate_postal_code) | **POST** /validate/address/postal-code | Validate a postal code, get location information about it
@@ -171,6 +173,60 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **address_geocode**
+> ValidateAddressResponse address_geocode(input)
+
+Geocode a street address into latitude and longitude
+
+Geocodes a street address into latitude and longitude.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
+input = cloudmersive_validate_api_client.ValidateAddressRequest() # ValidateAddressRequest | Input parse request
+
+try:
+    # Geocode a street address into latitude and longitude
+    api_response = api_instance.address_geocode(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AddressApi->address_geocode: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ValidateAddressRequest**](ValidateAddressRequest.md)| Input parse request | 
+
+### Return type
+
+[**ValidateAddressResponse**](ValidateAddressResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -379,6 +435,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ParseAddressResponse**](ParseAddressResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **address_reverse_geocode_address**
+> ReverseGeocodeAddressResponse address_reverse_geocode_address(input)
+
+Reverse geocode a lattitude and longitude into an address
+
+Converts lattitude and longitude coordinates into an address through reverse-geocoding.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.AddressApi(cloudmersive_validate_api_client.ApiClient(configuration))
+input = cloudmersive_validate_api_client.ReverseGeocodeAddressRequest() # ReverseGeocodeAddressRequest | Input reverse geocoding request
+
+try:
+    # Reverse geocode a lattitude and longitude into an address
+    api_response = api_instance.address_reverse_geocode_address(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AddressApi->address_reverse_geocode_address: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ReverseGeocodeAddressRequest**](ReverseGeocodeAddressRequest.md)| Input reverse geocoding request | 
+
+### Return type
+
+[**ReverseGeocodeAddressResponse**](ReverseGeocodeAddressResponse.md)
 
 ### Authorization
 
