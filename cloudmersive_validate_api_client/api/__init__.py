@@ -10,5 +10,6 @@ from cloudmersive_validate_api_client.api.ip_address_api import IPAddressApi
 from cloudmersive_validate_api_client.api.lead_enrichment_api import LeadEnrichmentApi
 from cloudmersive_validate_api_client.api.name_api import NameApi
 from cloudmersive_validate_api_client.api.phone_number_api import PhoneNumberApi
+from cloudmersive_validate_api_client.api.text_input_api import TextInputApi
 from cloudmersive_validate_api_client.api.user_agent_api import UserAgentApi
 from cloudmersive_validate_api_client.api.vat_api import VatApi
