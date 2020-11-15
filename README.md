@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.0
+- Package version: 3.1.1
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -83,12 +83,17 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**address_get_country_currency**](docs/AddressApi.md#address_get_country_currency) | **POST** /validate/address/country/get-currency | Get the currency of the input country
 *AddressApi* | [**address_get_country_region**](docs/AddressApi.md#address_get_country_region) | **POST** /validate/address/country/get-region | Get the region, subregion and continent of the country
 *AddressApi* | [**address_get_timezone**](docs/AddressApi.md#address_get_timezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
+*AddressApi* | [**address_normalize_address**](docs/AddressApi.md#address_normalize_address) | **POST** /validate/address/street-address/normalize | Normalize a street address
 *AddressApi* | [**address_parse_string**](docs/AddressApi.md#address_parse_string) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *AddressApi* | [**address_reverse_geocode_address**](docs/AddressApi.md#address_reverse_geocode_address) | **POST** /validate/address/geocode/reverse | Reverse geocode a lattitude and longitude into an address
 *AddressApi* | [**address_validate_address**](docs/AddressApi.md#address_validate_address) | **POST** /validate/address/street-address | Validate a street address
 *AddressApi* | [**address_validate_city**](docs/AddressApi.md#address_validate_city) | **POST** /validate/address/city | Validate a City and State/Province combination, get location information about it
 *AddressApi* | [**address_validate_postal_code**](docs/AddressApi.md#address_validate_postal_code) | **POST** /validate/address/postal-code | Validate a postal code, get location information about it
 *AddressApi* | [**address_validate_state**](docs/AddressApi.md#address_validate_state) | **POST** /validate/address/state | Validate a state or province, name or abbreviation, get location information about it
+*DateTimeApi* | [**date_time_get_now_simple**](docs/DateTimeApi.md#date_time_get_now_simple) | **GET** /validate/date-time/get/now | Get current date and time as of now
+*DateTimeApi* | [**date_time_get_public_holidays**](docs/DateTimeApi.md#date_time_get_public_holidays) | **POST** /validate/date-time/get/holidays | Get public holidays in the specified country and year
+*DateTimeApi* | [**date_time_parse_natural_language_date_time**](docs/DateTimeApi.md#date_time_parse_natural_language_date_time) | **POST** /validate/date-time/parse/date-time/natural-language | Parses a free-form natural language date and time string into a date and time
+*DateTimeApi* | [**date_time_parse_standard_date_time**](docs/DateTimeApi.md#date_time_parse_standard_date_time) | **POST** /validate/date-time/parse/date-time/structured | Parses a standardized date and time string into a date and time
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domain_quality_score**](docs/DomainApi.md#domain_quality_score) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
@@ -121,6 +126,10 @@ Class | Method | HTTP request | Description
  - [CheckResponse](docs/CheckResponse.md)
  - [CountryDetails](docs/CountryDetails.md)
  - [CountryListResult](docs/CountryListResult.md)
+ - [DateTimeNaturalLanguageParseRequest](docs/DateTimeNaturalLanguageParseRequest.md)
+ - [DateTimeNowResult](docs/DateTimeNowResult.md)
+ - [DateTimeStandardizedParseRequest](docs/DateTimeStandardizedParseRequest.md)
+ - [DateTimeStandardizedParseResponse](docs/DateTimeStandardizedParseResponse.md)
  - [DomainQualityResponse](docs/DomainQualityResponse.md)
  - [FirstNameValidationRequest](docs/FirstNameValidationRequest.md)
  - [FirstNameValidationResponse](docs/FirstNameValidationResponse.md)
@@ -131,6 +140,7 @@ Class | Method | HTTP request | Description
  - [GeolocateStreetAddressResponse](docs/GeolocateStreetAddressResponse.md)
  - [GetGenderRequest](docs/GetGenderRequest.md)
  - [GetGenderResponse](docs/GetGenderResponse.md)
+ - [GetPublicHolidaysRequest](docs/GetPublicHolidaysRequest.md)
  - [GetTimezonesRequest](docs/GetTimezonesRequest.md)
  - [GetTimezonesResponse](docs/GetTimezonesResponse.md)
  - [IPThreatResponse](docs/IPThreatResponse.md)
@@ -138,10 +148,13 @@ Class | Method | HTTP request | Description
  - [LastNameValidationResponse](docs/LastNameValidationResponse.md)
  - [LeadEnrichmentRequest](docs/LeadEnrichmentRequest.md)
  - [LeadEnrichmentResponse](docs/LeadEnrichmentResponse.md)
+ - [NormalizeAddressResponse](docs/NormalizeAddressResponse.md)
  - [ParseAddressRequest](docs/ParseAddressRequest.md)
  - [ParseAddressResponse](docs/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/PhoneNumberValidationResponse.md)
+ - [PublicHolidayOccurrence](docs/PublicHolidayOccurrence.md)
+ - [PublicHolidaysResponse](docs/PublicHolidaysResponse.md)
  - [ReverseGeocodeAddressRequest](docs/ReverseGeocodeAddressRequest.md)
  - [ReverseGeocodeAddressResponse](docs/ReverseGeocodeAddressResponse.md)
  - [Timezone](docs/Timezone.md)
