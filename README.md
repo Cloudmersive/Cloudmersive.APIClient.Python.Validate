@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.1
+- Package version: 3.1.2
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -114,6 +114,7 @@ Class | Method | HTTP request | Description
 *NameApi* | [**name_validate_last_name**](docs/NameApi.md#name_validate_last_name) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phone_number_syntax_only**](docs/PhoneNumberApi.md#phone_number_syntax_only) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
 *TextInputApi* | [**text_input_check_xss**](docs/TextInputApi.md#text_input_check_xss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
+*TextInputApi* | [**text_input_check_xss_batch**](docs/TextInputApi.md#text_input_check_xss_batch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
 *TextInputApi* | [**text_input_protect_xss**](docs/TextInputApi.md#text_input_protect_xss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 *UserAgentApi* | [**user_agent_parse**](docs/UserAgentApi.md#user_agent_parse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vat_vat_lookup**](docs/VatApi.md#vat_vat_lookup) | **POST** /validate/vat/lookup | Validate a VAT number
@@ -180,6 +181,9 @@ Class | Method | HTTP request | Description
  - [VatLookupRequest](docs/VatLookupRequest.md)
  - [VatLookupResponse](docs/VatLookupResponse.md)
  - [WhoisResponse](docs/WhoisResponse.md)
+ - [XssProtectionBatchRequest](docs/XssProtectionBatchRequest.md)
+ - [XssProtectionBatchResponse](docs/XssProtectionBatchResponse.md)
+ - [XssProtectionRequestItem](docs/XssProtectionRequestItem.md)
  - [XssProtectionResult](docs/XssProtectionResult.md)
 
 
