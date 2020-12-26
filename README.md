@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.2
+- Package version: 3.1.3
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *IPAddressApi* | [**i_p_address_is_threat**](docs/IPAddressApi.md#i_p_address_is_threat) | **POST** /validate/ip/is-threat | Check if IP address is a known threat
 *IPAddressApi* | [**i_p_address_is_tor_node**](docs/IPAddressApi.md#i_p_address_is_tor_node) | **POST** /validate/ip/is-tor-node | Check if IP address is a Tor node server
 *IPAddressApi* | [**i_p_address_post**](docs/IPAddressApi.md#i_p_address_post) | **POST** /validate/ip/geolocate | Geolocate an IP address
+*IPAddressApi* | [**i_p_address_reverse_domain_lookup**](docs/IPAddressApi.md#i_p_address_reverse_domain_lookup) | **POST** /validate/ip/reverse-domain-lookup | Perform a reverse domain name (DNS) lookup on an IP address
 *LeadEnrichmentApi* | [**lead_enrichment_enrich_lead**](docs/LeadEnrichmentApi.md#lead_enrichment_enrich_lead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
 *NameApi* | [**name_get_gender**](docs/NameApi.md#name_get_gender) | **POST** /validate/name/get-gender | Get the gender of a first name
 *NameApi* | [**name_identifier**](docs/NameApi.md#name_identifier) | **POST** /validate/name/identifier | Validate a code identifier
@@ -144,6 +145,7 @@ Class | Method | HTTP request | Description
  - [GetPublicHolidaysRequest](docs/GetPublicHolidaysRequest.md)
  - [GetTimezonesRequest](docs/GetTimezonesRequest.md)
  - [GetTimezonesResponse](docs/GetTimezonesResponse.md)
+ - [IPReverseDNSLookupResponse](docs/IPReverseDNSLookupResponse.md)
  - [IPThreatResponse](docs/IPThreatResponse.md)
  - [LastNameValidationRequest](docs/LastNameValidationRequest.md)
  - [LastNameValidationResponse](docs/LastNameValidationResponse.md)
