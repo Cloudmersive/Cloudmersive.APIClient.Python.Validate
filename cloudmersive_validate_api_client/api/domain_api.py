@@ -132,6 +132,105 @@ class DomainApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def domain_get_top_level_domain_from_url(self, request, **kwargs):  # noqa: E501
+        """Get top-level domain name from URL  # noqa: E501
+
+        Gets the top-level domain name from a URL, such as mydomain.com.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_get_top_level_domain_from_url(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ValidateUrlRequestSyntaxOnly request: Input URL information (required)
+        :return: ValidateUrlResponseSyntaxOnly
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.domain_get_top_level_domain_from_url_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.domain_get_top_level_domain_from_url_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def domain_get_top_level_domain_from_url_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Get top-level domain name from URL  # noqa: E501
+
+        Gets the top-level domain name from a URL, such as mydomain.com.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_get_top_level_domain_from_url_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ValidateUrlRequestSyntaxOnly request: Input URL information (required)
+        :return: ValidateUrlResponseSyntaxOnly
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method domain_get_top_level_domain_from_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `domain_get_top_level_domain_from_url`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/domain/url/get-top-level-domain', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ValidateUrlResponseSyntaxOnly',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def domain_post(self, domain, **kwargs):  # noqa: E501
         """Get WHOIS information for a domain  # noqa: E501
 
@@ -323,6 +422,204 @@ class DomainApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DomainQualityResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def domain_ssrf_check(self, request, **kwargs):  # noqa: E501
+        """Check a URL for SSRF threats  # noqa: E501
+
+        Checks if an input URL is at risk of being an SSRF (Server-side request forgery) threat or attack.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_ssrf_check(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UrlSsrfRequestFull request: Input URL request (required)
+        :return: UrlSsrfResponseFull
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.domain_ssrf_check_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.domain_ssrf_check_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def domain_ssrf_check_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Check a URL for SSRF threats  # noqa: E501
+
+        Checks if an input URL is at risk of being an SSRF (Server-side request forgery) threat or attack.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_ssrf_check_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UrlSsrfRequestFull request: Input URL request (required)
+        :return: UrlSsrfResponseFull
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method domain_ssrf_check" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `domain_ssrf_check`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/domain/url/ssrf-threat-check', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UrlSsrfResponseFull',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def domain_ssrf_check_batch(self, request, **kwargs):  # noqa: E501
+        """Check a URL for SSRF threats in batches  # noqa: E501
+
+        Batch-checks if input URLs are at risk of being an SSRF (Server-side request forgery) threat or attack.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_ssrf_check_batch(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UrlSsrfRequestBatch request: Input URL request as a batch of multiple URLs (required)
+        :return: UrlSsrfResponseBatch
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.domain_ssrf_check_batch_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.domain_ssrf_check_batch_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def domain_ssrf_check_batch_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Check a URL for SSRF threats in batches  # noqa: E501
+
+        Batch-checks if input URLs are at risk of being an SSRF (Server-side request forgery) threat or attack.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.domain_ssrf_check_batch_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UrlSsrfRequestBatch request: Input URL request as a batch of multiple URLs (required)
+        :return: UrlSsrfResponseBatch
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method domain_ssrf_check_batch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `domain_ssrf_check_batch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/domain/url/ssrf-threat-check/batch', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UrlSsrfResponseBatch',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

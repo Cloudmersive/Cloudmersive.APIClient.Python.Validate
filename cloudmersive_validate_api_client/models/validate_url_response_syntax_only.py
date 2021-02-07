@@ -32,25 +32,30 @@ class ValidateUrlResponseSyntaxOnly(object):
     """
     swagger_types = {
         'valid_url': 'bool',
-        'well_formed_url': 'str'
+        'well_formed_url': 'str',
+        'top_level_domain_name': 'str'
     }
 
     attribute_map = {
         'valid_url': 'ValidURL',
-        'well_formed_url': 'WellFormedURL'
+        'well_formed_url': 'WellFormedURL',
+        'top_level_domain_name': 'TopLevelDomainName'
     }
 
-    def __init__(self, valid_url=None, well_formed_url=None):  # noqa: E501
+    def __init__(self, valid_url=None, well_formed_url=None, top_level_domain_name=None):  # noqa: E501
         """ValidateUrlResponseSyntaxOnly - a model defined in Swagger"""  # noqa: E501
 
         self._valid_url = None
         self._well_formed_url = None
+        self._top_level_domain_name = None
         self.discriminator = None
 
         if valid_url is not None:
             self.valid_url = valid_url
         if well_formed_url is not None:
             self.well_formed_url = well_formed_url
+        if top_level_domain_name is not None:
+            self.top_level_domain_name = top_level_domain_name
 
     @property
     def valid_url(self):
@@ -97,6 +102,29 @@ class ValidateUrlResponseSyntaxOnly(object):
         """
 
         self._well_formed_url = well_formed_url
+
+    @property
+    def top_level_domain_name(self):
+        """Gets the top_level_domain_name of this ValidateUrlResponseSyntaxOnly.  # noqa: E501
+
+        The top-level domain name of the URL, e.g. mydomain.com  # noqa: E501
+
+        :return: The top_level_domain_name of this ValidateUrlResponseSyntaxOnly.  # noqa: E501
+        :rtype: str
+        """
+        return self._top_level_domain_name
+
+    @top_level_domain_name.setter
+    def top_level_domain_name(self, top_level_domain_name):
+        """Sets the top_level_domain_name of this ValidateUrlResponseSyntaxOnly.
+
+        The top-level domain name of the URL, e.g. mydomain.com  # noqa: E501
+
+        :param top_level_domain_name: The top_level_domain_name of this ValidateUrlResponseSyntaxOnly.  # noqa: E501
+        :type: str
+        """
+
+        self._top_level_domain_name = top_level_domain_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

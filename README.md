@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.4
+- Package version: 3.1.5
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -95,8 +95,11 @@ Class | Method | HTTP request | Description
 *DateTimeApi* | [**date_time_parse_natural_language_date_time**](docs/DateTimeApi.md#date_time_parse_natural_language_date_time) | **POST** /validate/date-time/parse/date-time/natural-language | Parses a free-form natural language date and time string into a date and time
 *DateTimeApi* | [**date_time_parse_standard_date_time**](docs/DateTimeApi.md#date_time_parse_standard_date_time) | **POST** /validate/date-time/parse/date-time/structured | Parses a standardized date and time string into a date and time
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
+*DomainApi* | [**domain_get_top_level_domain_from_url**](docs/DomainApi.md#domain_get_top_level_domain_from_url) | **POST** /validate/domain/url/get-top-level-domain | Get top-level domain name from URL
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domain_quality_score**](docs/DomainApi.md#domain_quality_score) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
+*DomainApi* | [**domain_ssrf_check**](docs/DomainApi.md#domain_ssrf_check) | **POST** /validate/domain/url/ssrf-threat-check | Check a URL for SSRF threats
+*DomainApi* | [**domain_ssrf_check_batch**](docs/DomainApi.md#domain_ssrf_check_batch) | **POST** /validate/domain/url/ssrf-threat-check/batch | Check a URL for SSRF threats in batches
 *DomainApi* | [**domain_url_full**](docs/DomainApi.md#domain_url_full) | **POST** /validate/domain/url/full | Validate a URL fully
 *DomainApi* | [**domain_url_syntax_only**](docs/DomainApi.md#domain_url_syntax_only) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**email_address_get_servers**](docs/EmailApi.md#email_address_get_servers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
@@ -166,6 +169,10 @@ Class | Method | HTTP request | Description
  - [ReverseGeocodeAddressResponse](docs/ReverseGeocodeAddressResponse.md)
  - [Timezone](docs/Timezone.md)
  - [TorNodeResponse](docs/TorNodeResponse.md)
+ - [UrlSsrfRequestBatch](docs/UrlSsrfRequestBatch.md)
+ - [UrlSsrfRequestFull](docs/UrlSsrfRequestFull.md)
+ - [UrlSsrfResponseBatch](docs/UrlSsrfResponseBatch.md)
+ - [UrlSsrfResponseFull](docs/UrlSsrfResponseFull.md)
  - [UserAgentValidateRequest](docs/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/UserAgentValidateResponse.md)
  - [ValidateAddressRequest](docs/ValidateAddressRequest.md)
