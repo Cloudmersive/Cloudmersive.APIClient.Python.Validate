@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.6
+- Package version: 3.1.8
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -121,6 +121,8 @@ Class | Method | HTTP request | Description
 *NameApi* | [**name_validate_full_name**](docs/NameApi.md#name_validate_full_name) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**name_validate_last_name**](docs/NameApi.md#name_validate_last_name) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phone_number_syntax_only**](docs/PhoneNumberApi.md#phone_number_syntax_only) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
+*TextInputApi* | [**text_input_check_sql_injection**](docs/TextInputApi.md#text_input_check_sql_injection) | **POST** /validate/text-input/check/sql-injection | Check text input for SQL Injection (SQLI) attacks
+*TextInputApi* | [**text_input_check_sql_injection_batch**](docs/TextInputApi.md#text_input_check_sql_injection_batch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 *TextInputApi* | [**text_input_check_xss**](docs/TextInputApi.md#text_input_check_xss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
 *TextInputApi* | [**text_input_check_xss_batch**](docs/TextInputApi.md#text_input_check_xss_batch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
 *TextInputApi* | [**text_input_protect_xss**](docs/TextInputApi.md#text_input_protect_xss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
@@ -171,6 +173,10 @@ Class | Method | HTTP request | Description
  - [PublicHolidaysResponse](docs/PublicHolidaysResponse.md)
  - [ReverseGeocodeAddressRequest](docs/ReverseGeocodeAddressRequest.md)
  - [ReverseGeocodeAddressResponse](docs/ReverseGeocodeAddressResponse.md)
+ - [SqlInjectionCheckBatchRequest](docs/SqlInjectionCheckBatchRequest.md)
+ - [SqlInjectionCheckBatchResponse](docs/SqlInjectionCheckBatchResponse.md)
+ - [SqlInjectionCheckRequestItem](docs/SqlInjectionCheckRequestItem.md)
+ - [SqlInjectionDetectionResult](docs/SqlInjectionDetectionResult.md)
  - [Timezone](docs/Timezone.md)
  - [TorNodeResponse](docs/TorNodeResponse.md)
  - [UrlSafetyCheckRequestFull](docs/UrlSafetyCheckRequestFull.md)
