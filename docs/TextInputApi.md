@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**text_input_check_sql_injection_batch**](TextInputApi.md#text_input_check_sql_injection_batch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 [**text_input_check_xss**](TextInputApi.md#text_input_check_xss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
 [**text_input_check_xss_batch**](TextInputApi.md#text_input_check_xss_batch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
+[**text_input_check_xxe**](TextInputApi.md#text_input_check_xxe) | **POST** /validate/text-input/check/xxe | Protect text input from XML External Entity (XXE) attacks
+[**text_input_check_xxe_batch**](TextInputApi.md#text_input_check_xxe_batch) | **POST** /validate/text-input/check/xxe/batch | Protect text input from XML External Entity (XXE) attacks
 [**text_input_protect_xss**](TextInputApi.md#text_input_protect_xss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 
 
@@ -217,6 +219,120 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**XssProtectionBatchResponse**](XssProtectionBatchResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **text_input_check_xxe**
+> XxeDetectionResult text_input_check_xxe(value, allow_internet_urls=allow_internet_urls, known_safe_urls=known_safe_urls, known_unsafe_urls=known_unsafe_urls)
+
+Protect text input from XML External Entity (XXE) attacks
+
+Detects XXE (XML External Entity) attacks from text input.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.TextInputApi(cloudmersive_validate_api_client.ApiClient(configuration))
+value = 'value_example' # str | User-facing text input.
+allow_internet_urls = true # bool | Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. (optional)
+known_safe_urls = 'known_safe_urls_example' # str | Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. (optional)
+known_unsafe_urls = 'known_unsafe_urls_example' # str | Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. (optional)
+
+try:
+    # Protect text input from XML External Entity (XXE) attacks
+    api_response = api_instance.text_input_check_xxe(value, allow_internet_urls=allow_internet_urls, known_safe_urls=known_safe_urls, known_unsafe_urls=known_unsafe_urls)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TextInputApi->text_input_check_xxe: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **value** | **str**| User-facing text input. | 
+ **allow_internet_urls** | **bool**| Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. | [optional] 
+ **known_safe_urls** | **str**| Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. | [optional] 
+ **known_unsafe_urls** | **str**| Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. | [optional] 
+
+### Return type
+
+[**XxeDetectionResult**](XxeDetectionResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **text_input_check_xxe_batch**
+> XxeDetectionBatchResponse text_input_check_xxe_batch(request)
+
+Protect text input from XML External Entity (XXE) attacks
+
+Detects XXE (XML External Entity) attacks from text input.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.TextInputApi(cloudmersive_validate_api_client.ApiClient(configuration))
+request = cloudmersive_validate_api_client.XxeDetectionBatchRequest() # XxeDetectionBatchRequest | 
+
+try:
+    # Protect text input from XML External Entity (XXE) attacks
+    api_response = api_instance.text_input_check_xxe_batch(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TextInputApi->text_input_check_xxe_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**XxeDetectionBatchRequest**](XxeDetectionBatchRequest.md)|  | 
+
+### Return type
+
+[**XxeDetectionBatchResponse**](XxeDetectionBatchResponse.md)
 
 ### Authorization
 

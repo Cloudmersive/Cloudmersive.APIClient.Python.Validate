@@ -433,6 +433,216 @@ class TextInputApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def text_input_check_xxe(self, value, **kwargs):  # noqa: E501
+        """Protect text input from XML External Entity (XXE) attacks  # noqa: E501
+
+        Detects XXE (XML External Entity) attacks from text input.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.text_input_check_xxe(value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str value: User-facing text input. (required)
+        :param bool allow_internet_urls: Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false.
+        :param str known_safe_urls: Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe.
+        :param str known_unsafe_urls: Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe.
+        :return: XxeDetectionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.text_input_check_xxe_with_http_info(value, **kwargs)  # noqa: E501
+        else:
+            (data) = self.text_input_check_xxe_with_http_info(value, **kwargs)  # noqa: E501
+            return data
+
+    def text_input_check_xxe_with_http_info(self, value, **kwargs):  # noqa: E501
+        """Protect text input from XML External Entity (XXE) attacks  # noqa: E501
+
+        Detects XXE (XML External Entity) attacks from text input.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.text_input_check_xxe_with_http_info(value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str value: User-facing text input. (required)
+        :param bool allow_internet_urls: Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false.
+        :param str known_safe_urls: Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe.
+        :param str known_unsafe_urls: Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe.
+        :return: XxeDetectionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['value', 'allow_internet_urls', 'known_safe_urls', 'known_unsafe_urls']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method text_input_check_xxe" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'value' is set
+        if ('value' not in params or
+                params['value'] is None):
+            raise ValueError("Missing the required parameter `value` when calling `text_input_check_xxe`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'allow_internet_urls' in params:
+            header_params['allowInternetUrls'] = params['allow_internet_urls']  # noqa: E501
+        if 'known_safe_urls' in params:
+            header_params['knownSafeUrls'] = params['known_safe_urls']  # noqa: E501
+        if 'known_unsafe_urls' in params:
+            header_params['knownUnsafeUrls'] = params['known_unsafe_urls']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'value' in params:
+            body_params = params['value']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/text-input/check/xxe', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XxeDetectionResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def text_input_check_xxe_batch(self, request, **kwargs):  # noqa: E501
+        """Protect text input from XML External Entity (XXE) attacks  # noqa: E501
+
+        Detects XXE (XML External Entity) attacks from text input.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.text_input_check_xxe_batch(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param XxeDetectionBatchRequest request: (required)
+        :return: XxeDetectionBatchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.text_input_check_xxe_batch_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.text_input_check_xxe_batch_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def text_input_check_xxe_batch_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Protect text input from XML External Entity (XXE) attacks  # noqa: E501
+
+        Detects XXE (XML External Entity) attacks from text input.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.text_input_check_xxe_batch_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param XxeDetectionBatchRequest request: (required)
+        :return: XxeDetectionBatchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method text_input_check_xxe_batch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `text_input_check_xxe_batch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/text-input/check/xxe/batch', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XxeDetectionBatchResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def text_input_protect_xss(self, value, **kwargs):  # noqa: E501
         """Protect text input from Cross-Site-Scripting (XSS) attacks through normalization  # noqa: E501
 

@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.8
+- Package version: 3.1.9
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -125,6 +125,8 @@ Class | Method | HTTP request | Description
 *TextInputApi* | [**text_input_check_sql_injection_batch**](docs/TextInputApi.md#text_input_check_sql_injection_batch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 *TextInputApi* | [**text_input_check_xss**](docs/TextInputApi.md#text_input_check_xss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
 *TextInputApi* | [**text_input_check_xss_batch**](docs/TextInputApi.md#text_input_check_xss_batch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
+*TextInputApi* | [**text_input_check_xxe**](docs/TextInputApi.md#text_input_check_xxe) | **POST** /validate/text-input/check/xxe | Protect text input from XML External Entity (XXE) attacks
+*TextInputApi* | [**text_input_check_xxe_batch**](docs/TextInputApi.md#text_input_check_xxe_batch) | **POST** /validate/text-input/check/xxe/batch | Protect text input from XML External Entity (XXE) attacks
 *TextInputApi* | [**text_input_protect_xss**](docs/TextInputApi.md#text_input_protect_xss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 *UserAgentApi* | [**user_agent_parse**](docs/UserAgentApi.md#user_agent_parse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vat_vat_lookup**](docs/VatApi.md#vat_vat_lookup) | **POST** /validate/vat/lookup | Validate a VAT number
@@ -210,6 +212,10 @@ Class | Method | HTTP request | Description
  - [XssProtectionBatchResponse](docs/XssProtectionBatchResponse.md)
  - [XssProtectionRequestItem](docs/XssProtectionRequestItem.md)
  - [XssProtectionResult](docs/XssProtectionResult.md)
+ - [XxeDetectionBatchRequest](docs/XxeDetectionBatchRequest.md)
+ - [XxeDetectionBatchResponse](docs/XxeDetectionBatchResponse.md)
+ - [XxeDetectionRequestItem](docs/XxeDetectionRequestItem.md)
+ - [XxeDetectionResult](docs/XxeDetectionResult.md)
 
 
 ## Documentation For Authorization
