@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.1.9
+- Package version: 3.2.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
