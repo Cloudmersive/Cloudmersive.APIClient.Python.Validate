@@ -4,6 +4,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**text_input_check_html_ssrf**](TextInputApi.md#text_input_check_html_ssrf) | **POST** /validate/text-input/html/check/ssrf | Protect html input from Server-side Request Forgery (SSRF) attacks
 [**text_input_check_sql_injection**](TextInputApi.md#text_input_check_sql_injection) | **POST** /validate/text-input/check/sql-injection | Check text input for SQL Injection (SQLI) attacks
 [**text_input_check_sql_injection_batch**](TextInputApi.md#text_input_check_sql_injection_batch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 [**text_input_check_xss**](TextInputApi.md#text_input_check_xss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
@@ -12,6 +13,60 @@ Method | HTTP request | Description
 [**text_input_check_xxe_batch**](TextInputApi.md#text_input_check_xxe_batch) | **POST** /validate/text-input/check/xxe/batch | Protect text input from XML External Entity (XXE) attacks
 [**text_input_protect_xss**](TextInputApi.md#text_input_protect_xss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 
+
+# **text_input_check_html_ssrf**
+> HtmlSsrfDetectionResult text_input_check_html_ssrf(value)
+
+Protect html input from Server-side Request Forgery (SSRF) attacks
+
+Detects SSRF (Server-side request forgery) attacks and unsafe URL attacks from HTML text input, where attackers can attempt to access unsafe local or network paths in the server environment by injecting them into HTML.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.TextInputApi(cloudmersive_validate_api_client.ApiClient(configuration))
+value = 'value_example' # str | User-facing HTML input.
+
+try:
+    # Protect html input from Server-side Request Forgery (SSRF) attacks
+    api_response = api_instance.text_input_check_html_ssrf(value)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TextInputApi->text_input_check_html_ssrf: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **value** | **str**| User-facing HTML input. | 
+
+### Return type
+
+[**HtmlSsrfDetectionResult**](HtmlSsrfDetectionResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **text_input_check_sql_injection**
 > SqlInjectionDetectionResult text_input_check_sql_injection(value, detection_level=detection_level)

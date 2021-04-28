@@ -232,9 +232,9 @@ class DomainApi(object):
             collection_formats=collection_formats)
 
     def domain_is_admin_path(self, value, **kwargs):  # noqa: E501
-        """Check if path is a high-risk server administration path  # noqa: E501
+        """Check if path is a high-risk or vulnerable server administration path  # noqa: E501
 
-        Check if the input URL or relative path is a server Administration Path, and therefore a risk for remote access.  # noqa: E501
+        Check if the input URL or relative path is a server Administration Path, and therefore a risk or vulnerability for remote access.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.domain_is_admin_path(value, async_req=True)
@@ -254,9 +254,9 @@ class DomainApi(object):
             return data
 
     def domain_is_admin_path_with_http_info(self, value, **kwargs):  # noqa: E501
-        """Check if path is a high-risk server administration path  # noqa: E501
+        """Check if path is a high-risk or vulnerable server administration path  # noqa: E501
 
-        Check if the input URL or relative path is a server Administration Path, and therefore a risk for remote access.  # noqa: E501
+        Check if the input URL or relative path is a server Administration Path, and therefore a risk or vulnerability for remote access.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.domain_is_admin_path_with_http_info(value, async_req=True)

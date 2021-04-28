@@ -33,6 +33,105 @@ class TextInputApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def text_input_check_html_ssrf(self, value, **kwargs):  # noqa: E501
+        """Protect html input from Server-side Request Forgery (SSRF) attacks  # noqa: E501
+
+        Detects SSRF (Server-side request forgery) attacks and unsafe URL attacks from HTML text input, where attackers can attempt to access unsafe local or network paths in the server environment by injecting them into HTML.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.text_input_check_html_ssrf(value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str value: User-facing HTML input. (required)
+        :return: HtmlSsrfDetectionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.text_input_check_html_ssrf_with_http_info(value, **kwargs)  # noqa: E501
+        else:
+            (data) = self.text_input_check_html_ssrf_with_http_info(value, **kwargs)  # noqa: E501
+            return data
+
+    def text_input_check_html_ssrf_with_http_info(self, value, **kwargs):  # noqa: E501
+        """Protect html input from Server-side Request Forgery (SSRF) attacks  # noqa: E501
+
+        Detects SSRF (Server-side request forgery) attacks and unsafe URL attacks from HTML text input, where attackers can attempt to access unsafe local or network paths in the server environment by injecting them into HTML.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.text_input_check_html_ssrf_with_http_info(value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str value: User-facing HTML input. (required)
+        :return: HtmlSsrfDetectionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['value']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method text_input_check_html_ssrf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'value' is set
+        if ('value' not in params or
+                params['value'] is None):
+            raise ValueError("Missing the required parameter `value` when calling `text_input_check_html_ssrf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'value' in params:
+            body_params = params['value']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/validate/text-input/html/check/ssrf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='HtmlSsrfDetectionResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def text_input_check_sql_injection(self, value, **kwargs):  # noqa: E501
         """Check text input for SQL Injection (SQLI) attacks  # noqa: E501
 

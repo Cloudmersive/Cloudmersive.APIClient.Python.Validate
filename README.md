@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.2.1
+- Package version: 3.2.2
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -96,7 +96,7 @@ Class | Method | HTTP request | Description
 *DateTimeApi* | [**date_time_parse_standard_date_time**](docs/DateTimeApi.md#date_time_parse_standard_date_time) | **POST** /validate/date-time/parse/date-time/structured | Parses a standardized date and time string into a date and time
 *DomainApi* | [**domain_check**](docs/DomainApi.md#domain_check) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domain_get_top_level_domain_from_url**](docs/DomainApi.md#domain_get_top_level_domain_from_url) | **POST** /validate/domain/url/get-top-level-domain | Get top-level domain name from URL
-*DomainApi* | [**domain_is_admin_path**](docs/DomainApi.md#domain_is_admin_path) | **POST** /validate/domain/url/is-admin-path | Check if path is a high-risk server administration path
+*DomainApi* | [**domain_is_admin_path**](docs/DomainApi.md#domain_is_admin_path) | **POST** /validate/domain/url/is-admin-path | Check if path is a high-risk or vulnerable server administration path
 *DomainApi* | [**domain_phishing_check**](docs/DomainApi.md#domain_phishing_check) | **POST** /validate/domain/url/phishing-threat-check | Check a URL for Phishing threats
 *DomainApi* | [**domain_post**](docs/DomainApi.md#domain_post) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domain_quality_score**](docs/DomainApi.md#domain_quality_score) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
@@ -122,6 +122,7 @@ Class | Method | HTTP request | Description
 *NameApi* | [**name_validate_full_name**](docs/NameApi.md#name_validate_full_name) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**name_validate_last_name**](docs/NameApi.md#name_validate_last_name) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phone_number_syntax_only**](docs/PhoneNumberApi.md#phone_number_syntax_only) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
+*TextInputApi* | [**text_input_check_html_ssrf**](docs/TextInputApi.md#text_input_check_html_ssrf) | **POST** /validate/text-input/html/check/ssrf | Protect html input from Server-side Request Forgery (SSRF) attacks
 *TextInputApi* | [**text_input_check_sql_injection**](docs/TextInputApi.md#text_input_check_sql_injection) | **POST** /validate/text-input/check/sql-injection | Check text input for SQL Injection (SQLI) attacks
 *TextInputApi* | [**text_input_check_sql_injection_batch**](docs/TextInputApi.md#text_input_check_sql_injection_batch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 *TextInputApi* | [**text_input_check_xss**](docs/TextInputApi.md#text_input_check_xss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
@@ -158,6 +159,7 @@ Class | Method | HTTP request | Description
  - [GetPublicHolidaysRequest](docs/GetPublicHolidaysRequest.md)
  - [GetTimezonesRequest](docs/GetTimezonesRequest.md)
  - [GetTimezonesResponse](docs/GetTimezonesResponse.md)
+ - [HtmlSsrfDetectionResult](docs/HtmlSsrfDetectionResult.md)
  - [IPIntelligenceResponse](docs/IPIntelligenceResponse.md)
  - [IPReverseDNSLookupResponse](docs/IPReverseDNSLookupResponse.md)
  - [IPThreatResponse](docs/IPThreatResponse.md)
