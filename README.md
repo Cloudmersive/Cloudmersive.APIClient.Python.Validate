@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 This Python package provides a native API client for [Cloudmersive Data Validation](https://www.cloudmersive.com/validate-api)
 
 - API version: v1
-- Package version: 3.2.2
+- Package version: 3.2.3
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
 *DomainApi* | [**domain_ssrf_check**](docs/DomainApi.md#domain_ssrf_check) | **POST** /validate/domain/url/ssrf-threat-check | Check a URL for SSRF threats
 *DomainApi* | [**domain_ssrf_check_batch**](docs/DomainApi.md#domain_ssrf_check_batch) | **POST** /validate/domain/url/ssrf-threat-check/batch | Check a URL for SSRF threats in batches
 *DomainApi* | [**domain_url_full**](docs/DomainApi.md#domain_url_full) | **POST** /validate/domain/url/full | Validate a URL fully
+*DomainApi* | [**domain_url_html_ssrf_check**](docs/DomainApi.md#domain_url_html_ssrf_check) | **POST** /validate/domain/url/ssrf-threat-check/html-embedded | Check a URL for HTML embedded SSRF threats
 *DomainApi* | [**domain_url_syntax_only**](docs/DomainApi.md#domain_url_syntax_only) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**email_address_get_servers**](docs/EmailApi.md#email_address_get_servers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**email_full_validation**](docs/EmailApi.md#email_full_validation) | **POST** /validate/email/address/full | Fully validate an email address
@@ -185,6 +186,8 @@ Class | Method | HTTP request | Description
  - [SqlInjectionDetectionResult](docs/SqlInjectionDetectionResult.md)
  - [Timezone](docs/Timezone.md)
  - [TorNodeResponse](docs/TorNodeResponse.md)
+ - [UrlHtmlSsrfRequestFull](docs/UrlHtmlSsrfRequestFull.md)
+ - [UrlHtmlSsrfResponseFull](docs/UrlHtmlSsrfResponseFull.md)
  - [UrlSafetyCheckRequestFull](docs/UrlSafetyCheckRequestFull.md)
  - [UrlSafetyCheckResponseFull](docs/UrlSafetyCheckResponseFull.md)
  - [UrlSsrfRequestBatch](docs/UrlSsrfRequestBatch.md)

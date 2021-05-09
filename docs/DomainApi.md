@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**domain_ssrf_check**](DomainApi.md#domain_ssrf_check) | **POST** /validate/domain/url/ssrf-threat-check | Check a URL for SSRF threats
 [**domain_ssrf_check_batch**](DomainApi.md#domain_ssrf_check_batch) | **POST** /validate/domain/url/ssrf-threat-check/batch | Check a URL for SSRF threats in batches
 [**domain_url_full**](DomainApi.md#domain_url_full) | **POST** /validate/domain/url/full | Validate a URL fully
+[**domain_url_html_ssrf_check**](DomainApi.md#domain_url_html_ssrf_check) | **POST** /validate/domain/url/ssrf-threat-check/html-embedded | Check a URL for HTML embedded SSRF threats
 [**domain_url_syntax_only**](DomainApi.md#domain_url_syntax_only) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 
 
@@ -545,6 +546,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidateUrlResponseFull**](ValidateUrlResponseFull.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **domain_url_html_ssrf_check**
+> UrlHtmlSsrfResponseFull domain_url_html_ssrf_check(request)
+
+Check a URL for HTML embedded SSRF threats
+
+Checks if an input URL HTML is at risk of containing one or more embedded SSRF (Server-side request forgery) threats or attacks.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_validate_api_client
+from cloudmersive_validate_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_validate_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_validate_api_client.DomainApi(cloudmersive_validate_api_client.ApiClient(configuration))
+request = cloudmersive_validate_api_client.UrlHtmlSsrfRequestFull() # UrlHtmlSsrfRequestFull | Input URL request
+
+try:
+    # Check a URL for HTML embedded SSRF threats
+    api_response = api_instance.domain_url_html_ssrf_check(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DomainApi->domain_url_html_ssrf_check: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**UrlHtmlSsrfRequestFull**](UrlHtmlSsrfRequestFull.md)| Input URL request | 
+
+### Return type
+
+[**UrlHtmlSsrfResponseFull**](UrlHtmlSsrfResponseFull.md)
 
 ### Authorization
 
