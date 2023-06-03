@@ -44,6 +44,7 @@ class TextInputApi(object):
 
         :param async_req bool
         :param str value: User-facing HTML input. (required)
+        :param bool allow_cid_scheme: Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false.
         :return: HtmlSsrfDetectionResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,12 +67,13 @@ class TextInputApi(object):
 
         :param async_req bool
         :param str value: User-facing HTML input. (required)
+        :param bool allow_cid_scheme: Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false.
         :return: HtmlSsrfDetectionResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['value']  # noqa: E501
+        all_params = ['value', 'allow_cid_scheme']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -98,6 +100,8 @@ class TextInputApi(object):
         query_params = []
 
         header_params = {}
+        if 'allow_cid_scheme' in params:
+            header_params['allowCidScheme'] = params['allow_cid_scheme']  # noqa: E501
 
         form_params = []
         local_var_files = {}

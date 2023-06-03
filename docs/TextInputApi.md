@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **text_input_check_html_ssrf**
-> HtmlSsrfDetectionResult text_input_check_html_ssrf(value)
+> HtmlSsrfDetectionResult text_input_check_html_ssrf(value, allow_cid_scheme=allow_cid_scheme)
 
 Protect html input from Server-side Request Forgery (SSRF) attacks
 
@@ -38,10 +38,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_validate_api_client.TextInputApi(cloudmersive_validate_api_client.ApiClient(configuration))
 value = 'value_example' # str | User-facing HTML input.
+allow_cid_scheme = true # bool | Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. (optional)
 
 try:
     # Protect html input from Server-side Request Forgery (SSRF) attacks
-    api_response = api_instance.text_input_check_html_ssrf(value)
+    api_response = api_instance.text_input_check_html_ssrf(value, allow_cid_scheme=allow_cid_scheme)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TextInputApi->text_input_check_html_ssrf: %s\n" % e)
@@ -52,6 +53,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **value** | **str**| User-facing HTML input. | 
+ **allow_cid_scheme** | **bool**| Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. | [optional] 
 
 ### Return type
 
